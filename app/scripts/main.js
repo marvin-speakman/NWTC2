@@ -1,17 +1,6 @@
-var imgLoad = imagesLoaded( '#content' ),
-    isLoading = false;
-
-$('.nav_toggle').on('click', function () {
-    $('nav').toggleClass('active');
-});
-
-$('[data-page]').on('click', function() {
-    changePage.load($(this).data('page'));
-    $('nav').removeClass('active');
-});
-
-var changePage = function changePage() {
-
+var isLoading = false;
+var changePage = (function changePage() {
+    'use strict';
 
     function load(page) {
         var currentPage = $('body').data('current');
@@ -24,7 +13,7 @@ var changePage = function changePage() {
     }
 
     function setUpImageListener(page, currentPage) {
-        $('#content').off().imagesLoaded().always( function( instance ) {
+        $('#content').off().imagesLoaded().always( function() {
             $('.page').first().addClass('offPage');
             $('.page').last().removeClass('hidden');
             $('body').addClass(page);
@@ -38,5 +27,15 @@ var changePage = function changePage() {
 
     return {
         load: load
-    }
-}();
+    };
+}());
+
+$('.nav_toggle').on('click', function () {
+    $('nav').toggleClass('active');
+});
+
+$('[data-page]').on('click', function() {
+    changePage.load($(this).data('page'));
+    $('nav').removeClass('active');
+});
+
