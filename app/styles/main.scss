@@ -1,3 +1,4 @@
+@import "compass";
 @import "normalize";
 @import "nav";
 @import "oasthouse";
@@ -27,7 +28,7 @@ html, body {
 
 .page {
     position: absolute;
-    -webkit-transition: all 2s ease-in-out;
+    @include transition(all 2s ease-in-out);
     opacity: 1;
     right: 0;
     width: 100%;
@@ -35,9 +36,9 @@ html, body {
 }
 
 .hidden {
-    right: -1920px;
+    @include transform(translateX(1920px));
 }
 
 .offPage {
-    left: -1920px;
+    @include transform(translateX(-1920px));
 }

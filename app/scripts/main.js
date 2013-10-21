@@ -7,6 +7,7 @@ $('.nav_toggle').on('click', function () {
 
 $('[data-page]').on('click', function() {
     changePage.load($(this).data('page'));
+    $('nav').removeClass('active');
 });
 
 var changePage = function changePage() {
