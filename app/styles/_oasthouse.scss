@@ -26,73 +26,83 @@
 	top: 25%;
 	left: 22%;	
 
-	h1 {
-		text-align:center;
-		margin:0px 0 20px 0;
-		padding:0;
-	}
-
-	.go {
-		display:none;
-		position: absolute;
-		top: 20px;
-		right: 130px;
-	}
-
-	.mouse {
-		width:424px;
-		height:109px;
-		display:block;
-		position:absolute;
-		left: 230px;
-		top: 225px;
-
-		.fred {
-			width:112px;
-			height:45px;
-			display:block;
-			background:url(../images/oasthouse/mousey.png) no-repeat;
-			position:absolute;
-			right: 6px;
-			top: 13px;
-			z-index:1;
+		h1 {
+			text-align:center;
+			margin:0px 0 20px 0;
+			padding:0;
 		}
 
-		.cover {
-			background:url(../images/oasthouse/mouse-bg.png) no-repeat;
+		.go {
+			display:none;
+			position: absolute;
+			top: 20px;
+			right: 130px;
+		}
+
+		.mouse {
 			width:424px;
 			height:109px;
 			display:block;
-			z-index:2;
 			position:absolute;
-			top:0px;
-			left:0px;
+			left: 230px;
+			top: 225px;
+
+			.fred {
+				width:112px;
+				height:45px;
+				display:block;
+				background:url(../images/oasthouse/mousey.png) no-repeat;
+				position:absolute;
+				right: 6px;
+				top: 13px;
+				z-index:1;
+			}
+
+			.cover {
+				background:url(../images/oasthouse/mouse-bg.png) no-repeat;
+				width:424px;
+				height:109px;
+				display:block;
+				z-index:2;
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
 		}
-	}
 
-	.bee-hive {
-		width:464px;
-		height:194px;
-		display:block;
-		background:url(../images/oasthouse/bee-bg.png) no-repeat;
-		position:absolute;
-		top:184px;
-		right:-10px;
-		z-index:2;
+		.bee-hive {
+			width:464px;
+			height:194px;
+			display:block;
+			background:url(../images/oasthouse/bee-bg.png) no-repeat;
+			position:absolute;
+			top:184px;
+			right:-10px;
+			z-index:2;
 
-		.bee {
-			background:url(../images/oasthouse/bee.png) no-repeat;
-			width:105px;
-			height:118px;
-			position: absolute;
-			top: 0px;
-			right: 0px;
-			display: none;
+			.bee {
+				background:url(../images/oasthouse/bee.png) no-repeat;
+				width:105px;
+				height:118px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				display: none;
+			}
+
 		}
 
-	}
+		.beer {
+			width:175px;
+			height:285px;
+			background:url(../images/oasthouse/beer.png) no-repeat;
+			position:absolute;
+			top: 228px;
+			left: 50px;
+			display:block;
+		}
 
-}	
+	}	
 
 
 }
