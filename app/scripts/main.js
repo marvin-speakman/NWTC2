@@ -1,17 +1,29 @@
+var imgLoad = imagesLoaded( '#content' );
+
 $('.nav_toggle').on('click', function () {
     $('nav').toggleClass('active');
 });
 
-var changePage = function changePage() {
-    var currentPage = $('body').data('page');
+$('[data-page]').on('click', function() {
+    changePage.load($(this).data('page'));
+});
 
-    function loadNext(page) {
-        $.ajax({
-            url: window.location.hostname + '/' + page + '.html'
-        }).done(function( data ) {
-            if ( console && console.log ) {
-                console.log( 'Yeah Boy' );
-            }
+var changePage = function changePage() {
+    var currentPage = $('body').data('current');
+
+    function load(page) {
+        $('#content').append('<div class="page hidden"></div>');
+        $('.page').last().load( page + '.html #content' );
+        setUpImageListener();
+    }
+
+    function setUpImageListener() {
+        $('#content').off().imagesLoaded().always( function( instance ) {
+            $('.page').last().removeClass('hidden')
         });
     }
-}
+
+    return {
+        load: load
+    }
+}();

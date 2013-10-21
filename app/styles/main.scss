@@ -4,9 +4,11 @@
 html, body {
     min-height: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
 #content {
+    position: absolute;
     top: 50%;
     left: 50%;
     overflow: hidden;
@@ -19,4 +21,13 @@ html, body {
 
 .botanist {
     background: url('../images/botanist/bg.jpg');
+}
+
+.page {
+    -webkit-transition: all 0.7s ease-in-out;
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
 }
