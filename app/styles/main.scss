@@ -1,0 +1,20 @@
+@import "nav";
+
+html, body {
+    min-height: 100%;
+}
+
+body, #content {
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    margin-top: -516px;
+    margin-left: -960px;
+    min-height: 100%;
+    width: 1920px;
+    height: 1032px;
+}
+
+.botanist {
+    background: url('../images/botanist/bg.jpg');
+}
