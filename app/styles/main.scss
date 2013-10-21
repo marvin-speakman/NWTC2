@@ -1,10 +1,12 @@
+@import "normalize";
 @import "nav";
 
 html, body {
     min-height: 100%;
+    margin: 0;
 }
 
-body, #content {
+#content {
     top: 50%;
     left: 50%;
     overflow: hidden;
