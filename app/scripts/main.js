@@ -27,7 +27,7 @@ var changePage = function changePage() {
             $('.page').first().addClass('offPage');
             $('.page').last().removeClass('hidden');
             setTimeout( function() {
-                $('body').data('current', page);
+                $('body').data('current', page).removeClass().addClass(page);
                 $('.page').first().remove();
                 isLoading = false;
             }, 2100 );
