@@ -18,16 +18,17 @@ var changePage = function changePage() {
             isLoading = true;
             $('#content').append('<div class="page hidden"></div>');
             $('.page').last().load( page + '.html #inner' );
-            setUpImageListener(page);
+            setUpImageListener(page, currentPage);
         }
     }
 
-    function setUpImageListener(page) {
+    function setUpImageListener(page, currentPage) {
         $('#content').off().imagesLoaded().always( function( instance ) {
             $('.page').first().addClass('offPage');
             $('.page').last().removeClass('hidden');
+            $('body').addClass(page);
             setTimeout( function() {
-                $('body').data('current', page).removeClass().addClass(page);
+                $('body').data('current', page).removeClass(currentPage);
                 $('.page').first().remove();
                 isLoading = false;
             }, 2100 );
