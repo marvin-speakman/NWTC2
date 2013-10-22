@@ -1,4 +1,18 @@
 var isLoading = false;
+var parallax;
+var paraOpt = {
+                calibrateX: true, 
+                calibrateY: true, 
+                invertX: true,
+                invertY: true,
+                limitX: 20,
+                limitY: 20,
+                scalarX: 5,
+                scalarY: 5,
+                frictionX: 1,
+                frictionY: 0.2
+                }
+
 var changePage = (function changePage() {
     'use strict';
 
@@ -21,6 +35,7 @@ var changePage = (function changePage() {
                 $('body').data('current', page).removeClass(currentPage);
                 $('.page').first().remove();
                 isLoading = false;
+                parallax = new Parallax(scene, paraOpt);
             }, 2100 );
         });
     }
@@ -35,8 +50,9 @@ $('.nav_toggle').on('click', function () {
 });
 
 $('[data-page]').on('click', function() {
+    parallax.disable();
     var page = $(this).data('page');
-    switch(page) {
+   /* switch(page) {
         case 'home':
             History.pushState(page,"New World Trading Co","index.html");
         break;
@@ -52,8 +68,15 @@ $('[data-page]').on('click', function() {
     }
     window.addEventListener('popstate', function(event) {
         console.log('popstate fired!');
-        changePage.load(page);
-    });
+       
+    });*/
+ changePage.load(page);
     $('nav').removeClass('active');
 });
+
+// Parallax on the content div //
+var scene = document.getElementById('content');
+parallax = new Parallax(scene,paraOpt);
+
+
 

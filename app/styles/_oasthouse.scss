@@ -23,8 +23,8 @@
 
 	.center-island {
 	position:absolute;
-	top: 25%;
-	left: 22%;	
+	top: 25% !important;
+	left: 22% !important;	
 
 		h1 {
 			text-align:center;
@@ -35,21 +35,21 @@
 		.go {
 			display:none;
 			position: absolute;
-			top: 20px;
-			right: 130px;
+			top: 20px !important;
+			right: 130px !important;
 		}
 
 		.mouse {
-			width:424px;
-			height:109px;
+			width:424px !important;
+			height:109px !important;
 			display:block;
 			position:absolute;
 			left: 230px;
 			top: 225px;
 
 			.fred {
-				width:112px;
-				height:45px;
+				width:112px !important;
+				height:45px !important;
 				display:block;
 				background:url(../images/oasthouse/mousey.png) no-repeat;
 				position:absolute;
@@ -60,8 +60,8 @@
 
 			.cover {
 				background:url(../images/oasthouse/mouse-bg.png) no-repeat;
-				width:424px;
-				height:109px;
+				width:424px !important;
+				height:109px !important;
 				display:block;
 				z-index:2;
 				position:absolute;
@@ -71,8 +71,8 @@
 		}
 
 		.bee-hive {
-			width:464px;
-			height:194px;
+			width:464px !important;
+			height:194px !important;
 			display:block;
 			background:url(../images/oasthouse/bee-bg.png) no-repeat;
 			position:absolute;
@@ -82,8 +82,8 @@
 
 			.bee {
 				background:url(../images/oasthouse/bee.png) no-repeat;
-				width:105px;
-				height:118px;
+				width:105px !important;
+				height:118px !important;
 				position: absolute;
 				top: 0px;
 				right: 0px;
@@ -93,8 +93,8 @@
 		}
 
 		.beer {
-			width:175px;
-			height:285px;
+			width:175px !important;
+			height:285px !important;
 			background:url(../images/oasthouse/beer.png) no-repeat;
 			position:absolute;
 			top: 228px;

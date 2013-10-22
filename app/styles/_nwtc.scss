@@ -1,23 +1,37 @@
 .home{
 	
+		/* background-image: linear-gradient(bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
+		background-image: -o-linear-gradient(bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
+		background-image: -moz-linear-gradient( bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
+		background-image: -webkit-linear-gradient( bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
+		background-image: -ms-linear-gradient( bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
+		 */
+		background-image: url(../images/nwtc/home_back.png);
+
+	
 	.island{
-		position:relative; 
+		position: absolute;
 		background: url('../images/nwtc/CENTRAL-AREA.png') no-repeat;
-		margin:auto; 
 		margin-top: 200px;
+		margin-left: 250px;
 		height:1139px;
 		width:1335px;
 	}
 	.pinkCloud{
 		position: absolute;
-		top:660px;
-		left:1160px;
+		top:660px !important;
+		left:1160px !important;
 	}
 	.elephant{
 		position: absolute;
 		top:550px;
 		left:1060px;
 	}
-	
 
+	.man{
+		position: absolute;
+		top:360px !important;
+		left:1160px !important;
+	}
+	
 }
