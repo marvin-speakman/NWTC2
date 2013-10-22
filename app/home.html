@@ -30,9 +30,13 @@
         </nav>
 
         <div id="content">
-            <div id="inner">
-                <div class="island"><img src="images/nwtc/CENTRAL-AREA.png" ></div> 
 
+            <div id="inner">
+                <div class="layer man" data-depth="1.00"><img src="images/nwtc/ginger-island-presenting-man-copy.png"/></div>
+                <div class="layer island" data-depth="0.70">
+                    <div class="elephant"><img src="images/nwtc/elephant.png"/></div>
+                </div> 
+                <div class="layer pinkCloud" data-depth="0.30"><img src="images/nwtc/cloudPnk.png"/></div>
             </div>
         </div>
 
@@ -42,6 +46,15 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
+            <!-- Scripts -->
+        <script src="scripts/parallax.js"></script>
+        <script>
+
+        // Pretty simple huh?
+        var scene = document.getElementById('inner');
+        var parallax = new Parallax(scene);
+
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
