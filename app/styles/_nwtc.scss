@@ -1,5 +1,23 @@
 .home{
-		
-
+	
+	.island{
+		position:relative; 
+		background: url('../images/nwtc/CENTRAL-AREA.png') no-repeat;
+		margin:auto; 
+		margin-top: 200px;
+		height:1139px;
+		width:1335px;
+	}
+	.pinkCloud{
+		position: absolute;
+		top:660px;
+		left:1160px;
+	}
+	.elephant{
+		position: absolute;
+		top:550px;
+		left:1060px;
+	}
+	
 
 }
