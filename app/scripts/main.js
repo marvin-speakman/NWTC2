@@ -35,7 +35,25 @@ $('.nav_toggle').on('click', function () {
 });
 
 $('[data-page]').on('click', function() {
-    changePage.load($(this).data('page'));
+    var page = $(this).data('page');
+    switch(page) {
+        case 'home':
+            History.pushState(page,"New World Trading Co","index.html");
+        break;
+        case 'oasthouse':
+            History.pushState(page,"The Oasthouse - New World Trading Co","oasthouse.html");
+        break;
+        case 'botanist':
+            History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
+        break;
+        case 'thesmugglerscove':
+            History.pushState(page,"The Smugglers Cove - New World Trading Co","smugglerscove.html");
+        break;
+    }
+    window.addEventListener('popstate', function(event) {
+        console.log('popstate fired!');
+        changePage.load(page);
+    });
     $('nav').removeClass('active');
 });
 
