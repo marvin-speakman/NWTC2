@@ -49,30 +49,38 @@ $('.nav_toggle').on('click', function () {
     $('nav').toggleClass('active');
 });
 
-$('[data-page]').on('click', function() {
+var History = window.History,
+    State = History.getState();
+
+$('nav a').on('click', function(event) {
+    event.preventDefault();
     parallax.disable();
     var page = $(this).data('page');
-   /* switch(page) {
+    switch(page) {
         case 'home':
-            History.pushState(page,"New World Trading Co","index.html");
+            History.pushState({toshow: page},"New World Trading Co","index.html");
         break;
         case 'oasthouse':
-            History.pushState(page,"The Oasthouse - New World Trading Co","oasthouse.html");
+            History.pushState({toshow: page},"The Oasthouse - New World Trading Co","oasthouse.html");
         break;
         case 'botanist':
-            History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
+            History.pushState({toshow: page},"The Botanist - New World Trading Co","botanist.html");
         break;
-        case 'thesmugglerscove':
-            History.pushState(page,"The Smugglers Cove - New World Trading Co","smugglerscove.html");
+        case 'smugglerscove':
+            History.pushState({toshow: page},"The Smugglers Cove - New World Trading Co","smugglerscove.html");
         break;
     }
-    window.addEventListener('popstate', function(event) {
-        console.log('popstate fired!');
-       
-    });*/
- changePage.load(page);
+
+    changePage.load(page);
     $('nav').removeClass('active');
+
 });
+
+History.Adapter.bind(window,'statechange',function(){
+    var State = History.getState();
+    changePage.load(State.data.toshow);
+});
+
 
 // Parallax on the content div //
 var scene = document.getElementById('content');

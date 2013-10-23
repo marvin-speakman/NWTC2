@@ -22,16 +22,18 @@
         <nav>
             <div class="nav_toggle"></div>
             <div class="navTopper"></div>
-            <div data-page="home" class="navSection"><img src="images/nav/nav_nwtc.png" alt="New World Trading Co." /></div>
-            <div data-page="oasthouse" class="navSection"><img src="images/nav/nav_oast.png" alt="The Oast House" /></div>
-            <div data-page="botanist" class="navSection"><img src="images/nav/nav_bot.png" alt="Botanist" /></div>
-            <div data-page="thesmugglerscove" class="navSection"><img src="images/nav/nav_smcove.png" alt="The Smugglers Cove" /></div>
+            <a href="index.html" data-page="home" class="navSection"><img src="images/nav/nav_nwtc.png" alt="New World Trading Co." /></a>
+            <a href="oasthouse.html" data-page="oasthouse" class="navSection"><img src="images/nav/nav_oast.png" alt="The Oast House" /></a>
+            <a href="botanist.html" data-page="botanist" class="navSection"><img src="images/nav/nav_bot.png" alt="Botanist" /></a>
+            <a href="smugglerscove.html" data-page="smugglerscove" class="navSection"><img src="images/nav/nav_smcove.png" alt="The Smugglers Cove" /></a>
             <div class="navBottom"></div>
         </nav>
 
         <div id="content">
             <div class="page">
-                <img src="images/home.png" alt="">
+                <div id="inner">
+                    <img src="images/home.png" alt="">
+                </div>
             </div>
         </div>
 
@@ -51,6 +53,7 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
+        <script src="bower_components/history.js/scripts/bundled-uncompressed/html4+html5/jquery.history.js"></script>
         <script src="scripts/parallax.js"></script>
         <!-- build:js scripts/main.js -->
         <script src="scripts/imagesloaded.js"></script>
@@ -70,7 +73,6 @@
         <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
         <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
         <script src="bower_components/sass-bootstrap/js/tab.js"></script>
-        <script src="bower_components/history.js/scripts/bundled-uncompressed/html4+html5/jquery.history.js"></script>
         <!-- endbuild -->
 </body>
 </html>
