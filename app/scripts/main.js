@@ -35,6 +35,7 @@ var changePage = (function changePage() {
                 $('body').data('current', page).removeClass(currentPage);
                 $('.page').first().remove();
                 isLoading = false;
+               
                 parallax = new Parallax(scene, paraOpt);
             }, 2100 );
         });
@@ -49,28 +50,41 @@ $('.nav_toggle').on('click', function () {
     $('nav').toggleClass('active');
 });
 
+var bodyBack;
+
 $('[data-page]').on('click', function() {
     parallax.disable();
     var page = $(this).data('page');
-   /* switch(page) {
+
+    switch(page) {
         case 'home':
-            History.pushState(page,"New World Trading Co","index.html");
+            // History.pushState(page,"New World Trading Co","index.html");
+            bodyBack = '../images/nwtc/home_back.png';
         break;
         case 'oasthouse':
-            History.pushState(page,"The Oasthouse - New World Trading Co","oasthouse.html");
+           // History.pushState(page,"The Oasthouse - New World Trading Co","oasthouse.html");
+            bodyBack = '../images/oasthouse/oast_back.png';
         break;
         case 'botanist':
-            History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
+            // History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
+            bodyBack = '../images/botanist/bot_back.png';
         break;
         case 'thesmugglerscove':
-            History.pushState(page,"The Smugglers Cove - New World Trading Co","smugglerscove.html");
+            // History.pushState(page,"The Smugglers Cove - New World Trading Co","smugglerscove.html");
+            bodyBack = '../images/smugglers/smug_back.png';
         break;
     }
-    window.addEventListener('popstate', function(event) {
+/*    window.addEventListener('popstate', function(event) {
         console.log('popstate fired!');
        
     });*/
- changePage.load(page);
+    setTimeout( function() {
+        changePage.load(page);
+    },250);
+
+    setTimeout( function() {
+        $('#content').css('background', 'url(' + bodyBack + ') ');
+        }, 0 );
     $('nav').removeClass('active');
 });
 

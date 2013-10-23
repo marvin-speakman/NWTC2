@@ -1,5 +1,5 @@
 .oasthouse {
-	background-image: linear-gradient(bottom, rgb(254,220,97) 2%, rgb(210,75,77) 100%);
+/* 	background-image: linear-gradient(bottom, rgb(254,220,97) 2%, rgb(210,75,77) 100%);
 	background-image: -o-linear-gradient(bottom, rgb(254,220,97) 2%, rgb(210,75,77) 100%);
 	background-image: -moz-linear-gradient(bottom, rgb(254,220,97) 2%, rgb(210,75,77) 100%);
 	background-image: -webkit-linear-gradient(bottom, rgb(254,220,97) 2%, rgb(210,75,77) 100%);
@@ -12,13 +12,14 @@
 		color-stop(0.02, rgb(254,220,97)),
 		color-stop(1, rgb(210,75,77))
 	);
-
+ 
+ background-image: url(../images/oasthouse/oast_back.png);*/
 	.brush {
 		position:absolute;
 		width:100%;
 		height:100%;
 		display:block;
-		background:url(../images/oasthouse/brush.png) no-repeat center center / 100% 100%;
+		/* background:url(../images/oasthouse/brush.png) no-repeat center center / 100% 100%; */
 	}
 
 	.center-island {
