@@ -1,4 +1,5 @@
 var isLoading = false;
+var page = 'home';
 var parallax;
 var paraOpt = {
                 calibrateX: true, 
