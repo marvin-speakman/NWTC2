@@ -1,14 +1,9 @@
 .home{
-	
-		/* background-image: linear-gradient(bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
-		background-image: -o-linear-gradient(bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
-		background-image: -moz-linear-gradient( bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
-		background-image: -webkit-linear-gradient( bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
-		background-image: -ms-linear-gradient( bottom, rgb(254,152,33) 0%, rgb(238,132,97) 32%, rgb(222,111,160) 60%, rgb(128,47,82) 100%);
-		 
-		background-image: url(../images/nwtc/home_back.png);*/
+	.balloon{
+		top:268px;
+		left:791px;
+	}
 
-	
 	.island{
 		position: absolute;
 		background: url('../images/nwtc/CENTRAL-AREA.png') no-repeat;
@@ -19,19 +14,58 @@
 	}
 	.pinkCloud{
 		position: absolute;
-		top:660px !important;
-		left:1160px !important;
+		top:640px;
+		left:930px;
 	}
 	.elephant{
 		position: absolute;
-		top:550px;
-		left:1060px;
+		top:300px;
+		left:800px;
 	}
 
 	.man{
 		position: absolute;
-		top:360px !important;
-		left:1160px !important;
+		top:270px;
+		left:1080px;
 	}
-	
+	.windmillGirl{
+		position: absolute;
+		top: 40px;
+	}
+
+	.bottleMan{
+		position: absolute;
+		left: 1620px;
+		top: 170px;
+	}
+
+	.pansy{
+		position: absolute;
+		left: 550px;
+		top: 190px;
+	}
+
+	.bath{
+		position: absolute;
+		top:780px;
+		left:-70px;
+	}
+
+	.bottle{
+		position: absolute;
+		left:1010px;
+		top: 170px;
+	}
+
+	.mushroom{
+		position: absolute;
+		left: 1600px;
+		top: 670px;
+	}
+
+	.trumpet{
+		position: absolute;
+		top: 830px;
+		right: -60px;
+	};
 }

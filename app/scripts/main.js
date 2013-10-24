@@ -9,8 +9,8 @@ var paraOpt = {
                 limitY: 20,
                 scalarX: 5,
                 scalarY: 5,
-                frictionX: 1,
-                frictionY: 0.2
+                frictionX: 0.1,
+                frictionY: 0.1
                 }
 
 var changePage = (function changePage() {
@@ -36,7 +36,7 @@ var changePage = (function changePage() {
                 $('.page').first().remove();
                 isLoading = false;
                
-                parallax = new Parallax(scene, paraOpt);
+               parallax = new Parallax(scene, paraOpt);
             }, 2100 );
         });
     }
@@ -59,12 +59,20 @@ $('[data-page]').on('click', function() {
     switch(page) {
         case 'home':
             // History.pushState(page,"New World Trading Co","index.html");
-            bodyBack = '../images/nwtc/home_back.png';
+                bodyBack = '../images/nwtc/home_back.png';
+                $('.balloon').css({
+                      "top": "268px",
+                      "left": "791px"
+                    })
         break;
         case 'oasthouse':
            // History.pushState(page,"The Oasthouse - New World Trading Co","oasthouse.html");
             bodyBack = '../images/oasthouse/oast_back.png';
-        break;
+            $('.balloon').css({
+                      "top": "148px",
+                      "left": "510px"
+                    })
+         break;
         case 'botanist':
             // History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
             bodyBack = '../images/botanist/bot_back.png';

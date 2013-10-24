@@ -12,9 +12,14 @@ html, body {
 
 
 #content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -540px;
+    margin-left: -960px;
     overflow: hidden;
     min-height: 100%;
-    width: 100%;
+    width: 1920px;
     height: 1032px;
     -webkit-transform-style: preserve-3d;
     -webkit-perspective: 1000;
@@ -43,3 +48,11 @@ html, body {
 .offPage {
     @include transform(translateX(-1920px));
 }
+
+.balloon{
+    position: absolute;
+    @include transition(all 3.5s ease-in-out);
+    z-index: 10;
+}
+
+/* .back{-webkit-filter: blur(2px); -moz-filter: blur(2px); -o-filter: blur(2px); -ms-filter: blur(2px); filter: blur(2px);} */
