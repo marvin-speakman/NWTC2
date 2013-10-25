@@ -1,5 +1,4 @@
 var isLoading = false;
-var page = 'home';
 var parallax;
 var paraOpt = {
                 calibrateX: true, 
@@ -58,7 +57,7 @@ $('[data-page]').on('click', function() {
     var page = $(this).data('page');
 
     switch(page) {
-        case 'home':
+        case 'index':
             // History.pushState(page,"New World Trading Co","index.html");
                 bodyBack = '../images/nwtc/home_back.png';
                 $('.balloon').css({
@@ -77,10 +76,18 @@ $('[data-page]').on('click', function() {
         case 'botanist':
             // History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
             bodyBack = '../images/botanist/bot_back.png';
+             $('.balloon').css({
+                      "top": "268px",
+                      "left": "791px"
+                    })
         break;
         case 'thesmugglerscove':
             // History.pushState(page,"The Smugglers Cove - New World Trading Co","smugglerscove.html");
             bodyBack = '../images/smugglers/smug_back.png';
+             $('.balloon').css({
+                      "top": "268px",
+                      "left": "791px"
+                    })
         break;
     }
 /*    window.addEventListener('popstate', function(event) {
