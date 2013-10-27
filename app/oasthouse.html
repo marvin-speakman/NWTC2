@@ -20,51 +20,53 @@
     <!--[if lt IE 10]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav>
+     <nav>
         <div class="nav_toggle"></div>
         <div class="navTopper"></div>
-        <div data-page="home" class="navSection">
-            <img src="images/nav/nav_nwtc.png" alt="New World Trading Co." />
-        </div>
-        <div data-page="oasthouse" class="navSection">
-            <img src="images/nav/nav_oast.png" alt="The Oast House" />
-        </div>
-        <div data-page="botanist" class="navSection">
-            <img src="images/nav/nav_bot.png" alt="Botanist" />
-        </div>
-        <div data-page="thesmugglerscove" class="navSection">
-            <img src="images/nav/nav_smcove.png" alt="The Smugglers Cove" />
-        </div>
+        <a href="index.html" data-page="index" class="navSection"><img src="images/nav/nav_nwtc.png" alt="New World Trading Co." /></a>
+        <a href="oasthouse.html" data-page="oasthouse" class="navSection"><img src="images/nav/nav_oast.png" alt="The Oast House" /></a>
+        <a href="botanist.html" data-page="botanist" class="navSection"><img src="images/nav/nav_bot.png" alt="Botanist" /></a>
+        <a href="smugglers-cove.html" data-page="smugglerscove" class="navSection"><img src="images/nav/nav_smcove.png" alt="The Smugglers Cove" /></a>
         <div class="navBottom"></div>
     </nav>
     <div id="content">
         <div class="page">
             <div id="inner">
                 <div class="brush"></div>
-                <div class="layer back" data-depth="0.20"></div>
+                <div class="layer back" data-depth="0.20">
+                    <div class="clouds"></div>
+                    <div class="horse-feeder"></div>
+                    <div class="train-nuts"></div>
+                </div>
 
                 <div class="layer mid" data-depth="0.40">
                     <div class="center-island">
-                    <h1><img src="images/oasthouse/the-oast-house.png" alt="The Oast house" width="282" height="29" /></h1>
-                    <a href="#" class="go">
-                        <img src="images/oasthouse/go.png" alt="Visit site" width="130" height="52" />
-                    </a>
-                    <img src="images/oasthouse/center-island.png" alt="" width="916" height="343"/>
-                    <div class="mouse">
-                        <div class="fred"></div>
-                        <div class="cover"></div>
+                        <h1><img src="images/oasthouse/the-oast-house.png" alt="The Oast house" width="282" height="29" /></h1>
+                        <a href="#" class="go">
+                            <img src="images/oasthouse/go.png" alt="Visit site" width="130" height="52" />
+                        </a>
+                        <img src="images/oasthouse/center-island.png" alt="" width="916" height="343"/>
+                        <div class="mouse">
+                            <div class="fred"></div>
+                            <div class="cover"></div>
+                        </div>
+                        <div class="beer"></div>
+                        <div class="plane"></div>
                     </div>
-                </div>
+                    <div class="rabbit"></div>
 
+                </div>
                 <div class="layer fore" data-depth="1.00">
                     <div class="bee-hive">
                         <div class="bee"></div>
                     </div>
-                    <div class="beer"></div>
+                    <div class="beers"></div>
+                    <div class="train-toms"></div>
                 </div>
                 
                     
-                </div>
+                
+                <div class="trumpet"><img src="images/nwtc/trumpet.png" width="358" height="125" /></div>
             </div>
         </div>
     </div>
@@ -91,6 +93,7 @@
         ga('send', 'pageview');
     </script>
     <!-- build:js scripts/main.js -->
+    <script src="bower_components/history.js/scripts/bundled-uncompressed/html4+html5/jquery.history.js"></script>
     <script src="scripts/imagesloaded.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
@@ -108,7 +111,6 @@
     <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
     <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
     <script src="bower_components/sass-bootstrap/js/tab.js"></script>
-    <script src="bower_components/history.js/scripts/bundled-uncompressed/html4+html5/jquery.history.js"></script>
     <!-- endbuild -->
 </body>
 </html>
