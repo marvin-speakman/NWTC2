@@ -52,7 +52,8 @@ $('.nav_toggle').on('click', function () {
 
 var bodyBack;
 
-$('[data-page]').on('click', function() {
+$('nav a').on('click', function(event) {
+    event.preventDefault();
     parallax.disable();
     var page = $(this).data('page');
 
