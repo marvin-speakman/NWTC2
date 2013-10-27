@@ -1,5 +1,6 @@
 var isLoading = false;
 var parallax;
+var currentPage = 'index';
 var paraOpt = {
                 calibrateX: true, 
                 calibrateY: true, 
@@ -20,7 +21,7 @@ var changePage = (function changePage() {
     'use strict';
 
     function load(page) {
-        var currentPage = $('body').data('current');
+        currentPage = $('body').data('current');
         if(!isLoading && currentPage !== page) {
             isLoading = true;
             $('#content').append('<div class="page hidden"></div>');
@@ -81,16 +82,16 @@ $('nav a').on('click', function(event) {
             // History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
             bodyBack = '../images/botanist/bot_back.png';
              $('.balloon').css({
-                      "top": "268px",
-                      "left": "791px"
+                      "top": "250px",
+                      "left": "1210px"
                     })
         break;
-        case 'thesmugglerscove':
+        case 'smugglerscove':
             // History.pushState(page,"The Smugglers Cove - New World Trading Co","smugglerscove.html");
             bodyBack = '../images/smugglers/smug_back.png';
              $('.balloon').css({
-                      "top": "268px",
-                      "left": "791px"
+                      "top": "480px",
+                      "left": "1310px"
                     })
         break;
     }

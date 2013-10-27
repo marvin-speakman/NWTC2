@@ -1,0 +1,51 @@
+.botanist{
+
+	.botIsland{
+		position: absolute;
+		background: url('../images/botanist/island.png') no-repeat;
+		top: 210px;
+		left: 670px;
+		height:653px;
+		width:572px;
+	}
+
+	.botWaiter{
+		position: absolute;
+		top:105px;
+		left:1460px;
+	}
+	.birds{
+		position: absolute;
+		top: 220px;
+	}
+
+	.astro{
+		position: absolute;
+		top:380px;
+		left:990px;
+	}
+
+
+	.snail{
+		position: absolute;
+		left: 140px;
+		top: 660px;
+	}
+
+	.cork{
+		position: absolute;
+		top: 630px;
+		left: 450px;
+	}
+	.botMan{
+		position: absolute;
+		top: 580px;
+		left: 350px;
+
+	}
+		.trumpet{
+		position: absolute;
+		top: 830px;
+		right: -60px;
+	}
+}

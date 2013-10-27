@@ -3,6 +3,7 @@
 @import "nav";
 @import "oasthouse";
 @import "nwtc";
+@import "botanist";
 
 html, body {
     min-height: 100%;
@@ -26,10 +27,6 @@ html, body {
     -webkit-backface-visibility: hidden;
     @include transition(all 0.5s linear);
     background-image: url(../images/nwtc/home_back.png);
-}
-
-.botanist {
-    background: url('../images/botanist/bg.jpg');
 }
 
 .page {
