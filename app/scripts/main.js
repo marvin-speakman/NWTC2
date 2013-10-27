@@ -1,5 +1,20 @@
-var isLoading = false;
-var parallax;
+var History = window.History,
+    State = History.getState();
+
+    // if (!History.enabled) {
+    //     return false;
+    // }
+
+// Parallax on the content div //
+var scene = document.getElementById('content');
+parallax = new Parallax(scene,paraOpt);
+
+History.options.disableSuid = true; //stop SUID being appeneded in IE
+History.replaceState({toshow: "index"},"New World Trading Co","/");
+
+
+var isLoading = false
+    parallax;
 var paraOpt = {
                 calibrateX: true, 
                 calibrateY: true, 
@@ -31,7 +46,7 @@ var changePage = (function changePage() {
             $('.page').first().addClass('offPage');
             $('.page').last().removeClass('hidden');
             $('body').addClass(page);
-            setTimeout( function() {
+            setTimeout(function() {
                 $('body').data('current', page).removeClass(currentPage);
                 $('.page').first().remove();
                 isLoading = false;
@@ -49,15 +64,12 @@ $('.nav_toggle').on('click', function () {
     $('nav').toggleClass('active');
 });
 
-var History = window.History,
-    State = History.getState();
-
 $('nav a').on('click', function(event) {
     event.preventDefault();
     parallax.disable();
     var page = $(this).data('page');
     switch(page) {
-        case 'home':
+        case 'index':
             History.pushState({toshow: page},"New World Trading Co","index.html");
         break;
         case 'oasthouse':
@@ -71,20 +83,12 @@ $('nav a').on('click', function(event) {
         break;
     }
 
-    changePage.load(page);
+    //changePage.load(page);
     $('nav').removeClass('active');
-
 });
 
 History.Adapter.bind(window,'statechange',function(){
-    var State = History.getState();
+    var State = History.getState(),
     changePage.load(State.data.toshow);
 });
-
-
-// Parallax on the content div //
-var scene = document.getElementById('content');
-parallax = new Parallax(scene,paraOpt);
-
-
 
