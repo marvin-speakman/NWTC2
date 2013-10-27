@@ -13,6 +13,9 @@ var paraOpt = {
                 frictionY: 0.1
                 }
 
+var balloonSway = new TimelineMax({ repeat: -1, yoyo: true });
+    balloonSway.append( TweenLite.to($('#balloon'), 3, {css:{rotation:10}, ease:Power2.easeInOut} ));
+
 var changePage = (function changePage() {
     'use strict';
 
