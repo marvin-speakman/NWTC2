@@ -38,14 +38,14 @@
 			position: absolute;
 			top:130px;
 			left: 10px;
-			@include transition(all 0.5s ease-in-out);
+			@include transition(all 1s ease-in-out);
 		}
 		.rainMask{
 			position: absolute;
 			height: 30px;
 			width:260px;
 			overflow: hidden;
-			@include transition(all 0.8s ease-in-out);
+			@include transition(all 1.5s ease-in-out);
 		}
 		.rain{
 			position: absolute;
@@ -88,6 +88,7 @@
 		top: 170px;
 		.bottleFall{
 			position:absolute;
+			z-index: 1000;
 			top:0px;
 			left:0px;
 			@include transition(all 2s ease-in);

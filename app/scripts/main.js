@@ -40,7 +40,7 @@ var changePage = (function changePage() {
                 $('.page').first().remove();
                 isLoading = false;
                Anim(page);
-              // parallax = new Parallax(scene, paraOpt);
+               parallax = new Parallax(scene, paraOpt);
             }, 2100 );
         });
     }
@@ -78,7 +78,7 @@ $('.nav_toggle').on('click', function () {
 var bodyBack;
 $('nav a').on('click', function(event) {
     event.preventDefault();
-    //parallax.disable();
+    parallax.disable();
     var page = $(this).data('page');
 
     switch(page) {
@@ -131,7 +131,7 @@ $('nav a').on('click', function(event) {
 
 // Parallax on the content div //
 var scene = document.getElementById('content');
-//parallax = new Parallax(scene,paraOpt);
+parallax = new Parallax(scene,paraOpt);
 Anim();
 
 
