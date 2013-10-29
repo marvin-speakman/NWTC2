@@ -86,6 +86,12 @@
 		position: absolute;
 		left:1010px;
 		top: 170px;
+		.bottleFall{
+			position:absolute;
+			top:0px;
+			left:0px;
+			@include transition(all 2s ease-in);
+		}
 	}
 
 	.mushroom{

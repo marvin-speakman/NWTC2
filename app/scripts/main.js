@@ -60,6 +60,13 @@ var Anim = (function Anim(page){
                 $('.rainMask').css('height', '300px');
             }, 400);
         },200);
+        $('.bottleFall').mouseover(function(){
+            $('.bottleFall').css('transform','rotate(-180deg)');
+            setTimeout(function(){
+            $('.bottleFall').css('top','1000px');
+        },200);
+           
+        })
         
     }
 });
