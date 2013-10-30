@@ -54,18 +54,13 @@ var changePage = (function changePage() {
 
 var Anim = (function Anim(page){
     if (page = 'index'){
-        setTimeout(function(){
-            $('.diver').css('top', '0px');
-            setTimeout(function(){
-                $('.rainMask').css('height', '300px');
-            }, 400);
-        },200);
-        $('.bottleFall').mouseover(function(){
-            $('.bottleFall').css('transform','rotate(-180deg)');
-            setTimeout(function(){
-            $('.bottleFall').css('top','1000px');
-        },200);
-           
+            var dtl = new TimelineLite();
+            dtl.to($('.diver'), 0.2, {top:'0px' , ease: Power2.easeOut});
+            dtl.to($('.rainMask'), 0.7, {height: '300px' , ease:Quad.easeIn})
+        $('.bottleHit').mouseover(function(){
+            var btl = new TimelineLite();
+            btl.to($('.bottleFall'), 0.2, {rotation:'-180' , ease: Quad.easeIn});
+            btl.to($('.bottleFall'), 0.7, {top: '1000px' , ease:Quad.easeIn})
         })
         
     }

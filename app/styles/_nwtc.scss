@@ -88,7 +88,6 @@
 		top: 170px;
 		.bottleFall{
 			position:absolute;
-			z-index: 1000;
 			top:0px;
 			left:0px;
 			@include transition(all 2s ease-in);
@@ -105,5 +104,13 @@
 		position: absolute;
 		top: 830px;
 		right: -60px;
+	}
+	.bottleHit{
+		position: absolute;
+		top:150px;
+		left:1010px;
+		height: 150px;
+		width: 100px;
+		
 	}
 }
