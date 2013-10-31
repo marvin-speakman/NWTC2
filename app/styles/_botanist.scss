@@ -1,40 +1,71 @@
-.botanist{
+.botanist {
+
+    .hit_areas {
+        width: 1920px;
+        height: 1030px;
+
+        div {
+            background: rgba(255, 0, 0, 0.8);
+            position: absolute;
+        }
+    }
 
 	.botIsland{
-		position: absolute;
-		background: url('../images/botanist/island.png') no-repeat;
-		top: 210px;
-		left: 670px;
-		height:653px;
-		width:572px;
-	}
+        position: absolute;
+        left: 707px;
+        top: 403px;
+        width: 461px;
+        height: 420px;
+    }
 
 	.botWaiter{
 		position: absolute;
 		top:105px;
 		left:1460px;
 	}
-	.birds{
-		position: absolute;
-		top: 220px;
+
+	.birds_bg {
+        position: absolute;
+        left: 0;
+        top: 248px;
+        width: 953px;
+        height: 452px;
 	}
 
+    .birds {
+        position: absolute;
+        left: 358px;
+        top: 390px;
+        background: url('../images/botanist/birds_sprite.png') no-repeat -13px 0;
+        width: 258px;
+        height: 98px;
+    }
+
+    .birds_hit {
+        left: 326px;
+        top: 360px;
+        width: 200px;
+        height: 120px;
+    }
+
 	.astro{
-		position: absolute;
-		top:380px;
-		left:990px;
+        position: absolute;
+        left: 1023px;
+        top: 592px;
+        width: 505px;
+        height: 299px;
 	}
 
 
 	.snail{
 		position: absolute;
 		left: 140px;
-		top: 660px;
+		top: 760px;
 	}
 
 	.cork{
 		position: absolute;
-		top: 630px;
+		top: 730px;
 		left: 450px;
 	}
 	.botMan{
@@ -43,7 +74,7 @@
 		left: 350px;
 
 	}
-		.trumpet{
+	.trumpet{
 		position: absolute;
 		top: 830px;
 		right: -60px;
