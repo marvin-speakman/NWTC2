@@ -35,11 +35,14 @@ var changePage = (function changePage() {
             $('.page').first().addClass('offPage');
             $('.page').last().removeClass('hidden');
             $('body').addClass(page);
+
             setTimeout( function() {
                 $('body').data('current', page).removeClass(currentPage);
                 $('.page').first().remove();
                 isLoading = false;
-               Anim(page);
+                console.log(page);
+                var tmp = window[page];
+                tmp.init();
                parallax = new Parallax(scene, paraOpt);
             }, 2100 );
         });
@@ -50,21 +53,6 @@ var changePage = (function changePage() {
     };
 }());
 
-// page anim
-
-var Anim = (function Anim(page){
-    if (page = 'index'){
-            var dtl = new TimelineLite();
-            dtl.to($('.diver'), 0.2, {top:'0px' , ease: Power2.easeOut});
-            dtl.to($('.rainMask'), 0.7, {height: '300px' , ease:Quad.easeIn})
-        $('.bottleHit').mouseover(function(){
-            var btl = new TimelineLite();
-            btl.to($('.bottleFall'), 0.2, {rotation:'-180' , ease: Quad.easeIn});
-            btl.to($('.bottleFall'), 0.7, {top: '1000px' , ease:Quad.easeIn})
-        })
-        
-    }
-});
 
 $('.nav_toggle').on('click', function () {
     $('nav').toggleClass('active');
@@ -127,7 +115,7 @@ $('nav a').on('click', function(event) {
 // Parallax on the content div //
 var scene = document.getElementById('content');
 parallax = new Parallax(scene,paraOpt);
-Anim();
+index.init();
 
 
 

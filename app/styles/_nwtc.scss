@@ -19,8 +19,15 @@
 	}
 	.elephant{
 		position: absolute;
-		top:300px;
+		top:310px;
 		left:800px;
+		width:300px;
+		.eHead{
+			position:absolute;
+			top:-54px;
+			left:-23px;
+
+		}
 	}
 	.diverAnim{
 			position: absolute;
@@ -61,13 +68,29 @@
 	}
 	.windmillGirl{
 		position: absolute;
-		top: 40px;
+		top: 110px;
+		.wind{
+			position: absolute;
+			top: -17px;
+			left:-37px;
+			opacity: 0;
+		}
+		.wt1, .wt2, .wt3, .wt4, .wt5{ position:absolute;}
+		.wt1 {top:27px; left:296px;}
+		.wt2{top:35px; left:334px;}
+		.wt3{top:10px; left:369px;}
+		.wt4{top:8px; left:409px;}
+		.wt5{top:30px; left:444px;}
 	}
 
 	.bottleMan{
 		position: absolute;
 		left: 1620px;
 		top: 170px;
+		.wBottle{
+			position: absolute;
+			
+		}
 	}
 
 	.pansy{
@@ -111,6 +134,21 @@
 		left:1010px;
 		height: 150px;
 		width: 100px;
+	}
+
+	.windHit{
+		position: absolute;
+		top:10px;
+		left:10px;
+		height: 500px;
+		width: 280px;
 		
+	}
+	.waiterHit{
+		position: absolute;
+		top:299px;
+		left:1700px;
+		height:100px;
+		width:80px;
 	}
 }

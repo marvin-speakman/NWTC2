@@ -3,7 +3,7 @@ var botanist = (function () {
 
     function init () {
         birds();
-        rain();
+        //rain();
     }
 
     function birds() {
@@ -31,7 +31,7 @@ var botanist = (function () {
     function rain() {
         // Raining Cloud
         var rainHits = $('.rain_hit'),
-            raindrops = $('.raindrops');
+            raindrops = $('.raindrops'),
             rainAnim = new TimelineMax({paused:true});
 
         rainAnim
