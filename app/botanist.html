@@ -32,26 +32,51 @@
                 <div class="page">
                     <div id="inner">
                         <div data-depth="0.30" class="back layer">
-                            <div class="botWaiter"><img src="images/botanist/Waiter.png" width="389" height="382" /></div>
+                            <div class="botWaiter">
+                                <img src="images/botanist/Waiter.png" width="389" height="239" class="waiter" />
+                                <img src="images/botanist/jar.png" width="109" height="181" class="jar" />
+                            </div>
+                            <div class="wheel"><img src="images/botanist/wheel.png" width="158" height="158"/></div>
                             <img src="images/botanist/birds.png" width="773" height="355" class="birds_bg" />
                             <div class="birds" ></div>
                         </div>
                         <div data-depth="0.40" class="mid layer">
                             <div class="astro"><img src="images/botanist/astro.png" width="505" height="299"/></div>
-                            <div class="botIsland"><img src="images/botanist/island.png" width="461" height="420"/></div>
-                            <div class="botMan"><img src="images/botanist/barrel-man.png" width="206" height="115"/>
+                            <div class="botIsland"><img src="images/botanist/island.png" width="572" height="472"/></div>
+                            <div class="cloud_rain">
+                                <div class="rainMask">
+                                    <img src="images/botanist/raindrops.png" class="rain" width="185" height="186">
+                                </div>
+                                <img src="images/botanist/cloud_roll.png" class="cloud_roll" width="267" height="105">
+                            </div>
+                            <div class="botMan"><img src="images/botanist/barrel-man.png" width="206" height="115"/></div>
+                            <div id="flowers">
+                                <ul>
+                                    <li class="d1 flower"></li>
+                                    <li class="d2 flower"></li>
+                                    <li class="d3 flower"></li>
+                                    <li class="d4 flower"></li>
+                                    <li class="d5 flower"></li>
+                                    <li class="d6 flower"></li>
+                                    <li class="d7 flower"></li>
+                                    <li class="d8 flower"></li>
+                                    <li class="d9 flower"></li>
+                                    <li class="d10 flower"></li>
+                                    <li class="d11 flower"></li>
+                                </ul>
+                            </div>
                         </div>
                         <div data-depth="1.00" class="layer fore">
                             <div class="snail"><img src="images/botanist/snail.png" width="335" height="148" /></div>
                             <div class="botCloud" ><img src="images/botanist/clouds.png" width="399" height="150" /></div>
                             <div class="cork"><img src="images/botanist/Cork-pop.png" width="515" height="252" /></div>
-
+                        </div>
+                        <div class="hit_areas">
+                            <div class="birds_hit"></div>
+                            <div class="jarHit"></div>
+                            <div class="cloud_hit"></div>
                         </div>
                     </div>
-                    <div class="hit_areas">
-                        <div class="birds_hit"></div>
-                    </div>
-                    <div class="trumpet"><img src="images/nwtc/trumpet.png" width="358" height="125" /></div>
                 </div>
             </div>
 
@@ -76,23 +101,12 @@
             </script>
 
             <!-- build:js scripts/main.js -->
+            <script src="bower_components/tweenMax/src/minified/TweenMax.min.js"></script>
             <script src="bower_components/history.js/scripts/bundled-uncompressed/html4+html5/jquery.history.js"></script>
             <script src="scripts/imagesloaded.js"></script>
+            <script src="scripts/index.js"></script>
+            <script src="scripts/botanist.js"></script>
             <script src="scripts/main.js"></script>
             <!-- endbuild -->
-
-            <!-- build:js scripts/plugins.js -->
-            <script src="bower_components/sass-bootstrap/js/affix.js"></script>
-            <script src="bower_components/sass-bootstrap/js/alert.js"></script>
-            <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
-            <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
-            <script src="bower_components/sass-bootstrap/js/modal.js"></script>
-            <script src="bower_components/sass-bootstrap/js/transition.js"></script>
-            <script src="bower_components/sass-bootstrap/js/button.js"></script>
-            <script src="bower_components/sass-bootstrap/js/popover.js"></script>
-            <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
-            <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
-            <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
-            <script src="bower_components/sass-bootstrap/js/tab.js"></script>            <!-- endbuild -->
         </body>
         </html>
