@@ -1,7 +1,8 @@
-var isLoading = false;
-var parallax;
-var currentPage = 'index';
-var paraOpt = {
+var isLoading = false,
+parallax,
+currentPage = 'index',
+worlds = ['oasthouse', 'botanist', 'smugglerscove'],
+paraOpt = {
                 calibrateX: true,
                 calibrateY: true,
                 invertX: true,
@@ -53,21 +54,65 @@ var changePage = (function changePage() {
     };
 }());
 
+function shuffle(array) {
+    var currentIndex = array.length,
+        temporaryValue, 
+        randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
+}
 
 $('.nav_toggle').on('click', function () {
     $('nav').toggleClass('active');
 });
 
-var bodyBack;
-$('nav a').on('click', function(event) {
-    event.preventDefault();
+var bodyBack,
+worldNo = worlds.length,
+tempWorld = 0
+shuffle(worlds);
+console.log(worlds);
+
+$('.balloon').on('click', function(){
     parallax.disable();
-    var page = $(this).data('page');
+    if(curWorld == 'index'){
+        curWorld = worlds[0];
+        ++tempWorld
+        console.log(curWorld);
+        navigate(curWorld);
+    }else{
+        curWorld = worlds[tempWorld]
+         ++tempWorld
+         console.log(curWorld);
+         if(tempWorld >= worldNo){
+            tempWorld = 0
+         }
+         navigate(curWorld);
+    }
+})
+
+
+//$('nav a').on('click', function(event) {
+function navigate(page){
+    //event.preventDefault();
+    
+    //var page = $(this).data('page');
 
     switch(page) {
         case 'index':
             // History.pushState(page,"New World Trading Co","index.html");
-                bodyBack = '../images/nwtc/home_back.png';
+                bodyBack = 'images/nwtc/home_back.png';
                 $('.balloon').css({
                       "top": "268px",
                       "left": "791px"
@@ -75,7 +120,7 @@ $('nav a').on('click', function(event) {
         break;
         case 'oasthouse':
            // History.pushState(page,"The Oasthouse - New World Trading Co","oasthouse.html");
-            bodyBack = '../images/oasthouse/oast_back.png';
+            bodyBack = 'images/oasthouse/oast_back.png';
             $('.balloon').css({
                       "top": "148px",
                       "left": "510px"
@@ -83,7 +128,7 @@ $('nav a').on('click', function(event) {
          break;
         case 'botanist':
             // History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
-            bodyBack = '../images/botanist/bot_back.png';
+            bodyBack = 'images/botanist/bot_back.png';
             $('.balloon').css({
                 'top': '288px',
                 'left': '1000px'
@@ -91,17 +136,14 @@ $('nav a').on('click', function(event) {
         break;
         case 'smugglerscove':
             // History.pushState(page,"The Smugglers Cove - New World Trading Co","smugglerscove.html");
-            bodyBack = '../images/smugglers/smug_back.png';
+            bodyBack = 'images/smugglers/smug_back.png';
              $('.balloon').css({
                       "top": "480px",
                       "left": "1310px"
                     })
         break;
     }
-/*    window.addEventListener('popstate', function(event) {
-        console.log('popstate fired!');
 
-    });*/
     setTimeout( function() {
         changePage.load(page);
     },250);
@@ -110,12 +152,13 @@ $('nav a').on('click', function(event) {
         $('#content').css('background', 'url(' + bodyBack + ') ');
         }, 0 );
     $('nav').removeClass('active');
-});
+};
 
 // Parallax on the content div //
 var scene = document.getElementById('content');
 parallax = new Parallax(scene,paraOpt);
 index.init();
+curWorld = 'index';
 
 
 
