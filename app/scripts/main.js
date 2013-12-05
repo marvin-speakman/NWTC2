@@ -44,7 +44,7 @@ var changePage = (function changePage() {
                 console.log(page);
                 var tmp = window[page];
                 tmp.init();
-               parallax = new Parallax(scene, paraOpt);
+               // parallax.enable();
             }, 2100 );
         });
     }
@@ -85,11 +85,12 @@ shuffle(worlds);
 console.log(worlds);
 
 $('.balloon').on('click', function(){
-    parallax.disable();
+    
     if(curWorld == 'index'){
         curWorld = worlds[0];
         ++tempWorld
         console.log(curWorld);
+
         navigate(curWorld);
     }else{
         curWorld = worlds[tempWorld]
@@ -106,13 +107,13 @@ $('.balloon').on('click', function(){
 //$('nav a').on('click', function(event) {
 function navigate(page){
     //event.preventDefault();
-    
+    //parallax.disable();
     //var page = $(this).data('page');
 
     switch(page) {
         case 'index':
             // History.pushState(page,"New World Trading Co","index.html");
-                bodyBack = 'images/nwtc/home_back.png';
+                bodyBack = 'images/nwtc/homeBack.jpg';
                 $('.balloon').css({
                       "top": "268px",
                       "left": "791px"
@@ -128,7 +129,7 @@ function navigate(page){
          break;
         case 'botanist':
             // History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
-            bodyBack = 'images/botanist/bot_back.png';
+            bodyBack = 'images/botanist/botBack.jpg';
             $('.balloon').css({
                 'top': '288px',
                 'left': '1000px'
@@ -146,7 +147,7 @@ function navigate(page){
 
     setTimeout( function() {
         changePage.load(page);
-    },250);
+    },0);
 
     setTimeout( function() {
         $('#content').css('background', 'url(' + bodyBack + ') ');
@@ -156,7 +157,7 @@ function navigate(page){
 
 // Parallax on the content div //
 var scene = document.getElementById('content');
-parallax = new Parallax(scene,paraOpt);
+//parallax = new Parallax(scene,paraOpt);
 index.init();
 curWorld = 'index';
 
