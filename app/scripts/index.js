@@ -50,6 +50,12 @@ var index = (function () {
         });
     }
 
+    function wilf(){
+        var wilf = new TimelineMax({repeat:10, repeatDelay:5});
+        wilf.add(TweenLite.to($('#littleWilf'), 3, {top:'50px' ,ease:Quad.easeInOut}));
+        wilf.add(TweenLite.to($('#littleWilf'), 3, {top:'0px' ,ease:Quad.easeInOut}));
+    }
+
 
     return {
         init: init

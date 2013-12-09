@@ -18,6 +18,8 @@ paraOpt = {
 var balloonSway = new TimelineMax({ repeat: -1, yoyo: true });
     balloonSway.append( TweenLite.to($('#balloon'), 3, {css:{rotation:10}, ease:Power2.easeInOut} ));
 
+
+
 var changePage = (function changePage() {
     'use strict';
 
@@ -44,7 +46,7 @@ var changePage = (function changePage() {
                 console.log(page);
                 var tmp = window[page];
                 tmp.init();
-               // parallax.enable();
+                parallax.enable();
             }, 2100 );
         });
     }
@@ -84,7 +86,7 @@ tempWorld = 0
 shuffle(worlds);
 console.log(worlds);
 
-$('.balloon').on('click', function(){
+$('#littleWilf').on('click', function(){
     
     if(curWorld == 'index'){
         curWorld = worlds[0];
@@ -107,7 +109,7 @@ $('.balloon').on('click', function(){
 //$('nav a').on('click', function(event) {
 function navigate(page){
     //event.preventDefault();
-    //parallax.disable();
+    parallax.disable();
     //var page = $(this).data('page');
 
     switch(page) {
@@ -116,7 +118,9 @@ function navigate(page){
                 bodyBack = 'images/nwtc/homeBack.jpg';
                 $('.balloon').css({
                       "top": "268px",
-                      "left": "791px"
+                      "left": "791px",
+                      "height": "100%",
+                      "width": "100%"
                     })
         break;
         case 'oasthouse':
@@ -157,9 +161,21 @@ function navigate(page){
 
 // Parallax on the content div //
 var scene = document.getElementById('content');
-//parallax = new Parallax(scene,paraOpt);
-index.init();
+parallax = new Parallax(scene,paraOpt);
+
 curWorld = 'index';
 
 
+// opening functions //
 
+$('.wilfred').on('click', function(){
+    $('.balloon').css({
+      "top": "268px",
+      "left": "791px"
+    })
+    $('.overlay').css('opacity', '0');
+    setTimeout( function() {
+        index.init();
+        $('.overlay').css('display', 'none');
+    }, 1500);
+})

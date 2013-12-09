@@ -1,8 +1,10 @@
 .index{
 	background-size:cover;
 	.balloon{
-		top:268px;
-		left:791px;
+		top:250px;
+		left:1000px;
+		z-index: 200;
+
 	}
 
 	.island{
@@ -151,5 +153,47 @@
 		left:1700px;
 		height:100px;
 		width:80px;
+	}
+	.overlay{
+		position:absolute;
+		height:100%;
+		width: 100%;
+		 /* Fallback for web browsers that doesn't support RGBa */
+	    background: rgb(0, 0, 0) transparent;
+	    /* RGBa with 0.6 opacity */
+	    background: rgba(0, 0, 0, 0.8);
+	    /* For IE 5.5 - 7*/
+	    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	    /* For IE 8*/
+	    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+		z-index: 100;
+		text-align: center;
+		@include transition(all 1s ease-in);
+	}
+	.wilfred{
+		position: relative;
+		margin-left: -400px;
+		top:300px;
+	}
+	.intro{
+		position: relative;
+		text-align: left;
+		left: 950px;
+		width: 400px;
+		font-family: georgia;
+		color: #fff;
+		font-size: 16px;
+	}
+	#littleWilf{
+		position:absolute;
+		top:250px;
+		left: 353px;
+		z-index: -1;
+	}
+	.wilfHit{
+		position:absolute;
+		top:250px;
+		left: 320px;
+		background: #ff0000;
 	}
 }
