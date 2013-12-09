@@ -1,5 +1,6 @@
 .index{
 	background-size:cover;
+
 	.balloon{
 		top:250px;
 		left:1000px;
@@ -10,10 +11,16 @@
 	.island{
 		position: absolute;
 		background: url('../images/nwtc/CENTRAL-AREA.png') no-repeat;
+		-webkit-filter: sepia(70%);
+	    -moz-filter: sepia(70%);
+	    -o-filter: sepia(70%);
+	    -ms-filter: sepia(70%);
+	    filter: sepia(70%);
 		margin-top: 200px;
 		margin-left: 250px;
 		height:1139px;
 		width:1335px;
+		z-index: 1;
 	}
 	.pinkCloud{
 		position: absolute;
@@ -29,6 +36,7 @@
 			position:absolute;
 			top:-54px;
 			left:-23px;
+			z-index: 10;
 
 		}
 	}
@@ -192,8 +200,9 @@
 	}
 	.wilfHit{
 		position:absolute;
-		top:250px;
-		left: 320px;
-		background: #ff0000;
+		height:150px;
+		width:100px;
+		top:390px;
+		left: 600px;
 	}
 }

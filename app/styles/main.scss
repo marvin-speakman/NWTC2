@@ -14,6 +14,13 @@ html, body {
 
 
 #content {
+    img{
+    -webkit-filter: sepia(70%);
+    -moz-filter: sepia(70%);
+    -o-filter: sepia(70%);
+    -ms-filter: sepia(70%);
+    filter: sepia(70%);
+    }
     position: absolute;
     top: 50%;
     left: 50%;
@@ -29,14 +36,14 @@ html, body {
     -webkit-transform-style: preserve-3d;
     -webkit-perspective: 1000;
     -webkit-backface-visibility: hidden;
-    @include transition(all 0.5s linear);
+    @include transition(all 3.5s ease-in-out);
     
     -webkit-transform: translate3d(0, 0, 0);
 }
 
 .page {
     position: absolute;
-    @include transition(all 2s ease-in-out);
+    @include transition(all 3.5s ease-in-out);
     opacity: 1;
     right: 0;
     width: 100%;

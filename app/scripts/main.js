@@ -7,10 +7,10 @@ paraOpt = {
                 calibrateY: true,
                 invertX: true,
                 invertY: true,
-                limitX: 20,
-                limitY: 20,
-                scalarX: 5,
-                scalarY: 5,
+                limitX: 10,
+                limitY: 0,
+                scalarX: 2,
+                scalarY: 2,
                 frictionX: 0.1,
                 frictionY: 0.1
                 }
@@ -46,8 +46,8 @@ var changePage = (function changePage() {
                 console.log(page);
                 var tmp = window[page];
                 tmp.init();
-                parallax.enable();
-            }, 2100 );
+                //parallax.enable();
+            }, 3500 );
         });
     }
 
@@ -86,7 +86,7 @@ tempWorld = 0
 shuffle(worlds);
 console.log(worlds);
 
-$('#littleWilf').on('click', function(){
+$('.wilfHit').on('click', function(){
     
     if(curWorld == 'index'){
         curWorld = worlds[0];
@@ -109,7 +109,7 @@ $('#littleWilf').on('click', function(){
 //$('nav a').on('click', function(event) {
 function navigate(page){
     //event.preventDefault();
-    parallax.disable();
+    //parallax.disable();
     //var page = $(this).data('page');
 
     switch(page) {
@@ -161,7 +161,7 @@ function navigate(page){
 
 // Parallax on the content div //
 var scene = document.getElementById('content');
-parallax = new Parallax(scene,paraOpt);
+
 
 curWorld = 'index';
 
@@ -176,6 +176,7 @@ $('.wilfred').on('click', function(){
     $('.overlay').css('opacity', '0');
     setTimeout( function() {
         index.init();
+       // parallax = new Parallax(scene,paraOpt);
         $('.overlay').css('display', 'none');
     }, 1500);
 })

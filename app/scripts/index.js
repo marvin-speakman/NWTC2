@@ -6,7 +6,8 @@ var index = (function () {
         bottleFall();
         ele();
         windGirl();
-        waiterFall()
+        waiterFall();
+        wilf();
     }
 
     function diver(){
@@ -51,9 +52,13 @@ var index = (function () {
     }
 
     function wilf(){
-        var wilf = new TimelineMax({repeat:10, repeatDelay:5});
-        wilf.add(TweenLite.to($('#littleWilf'), 3, {top:'50px' ,ease:Quad.easeInOut}));
-        wilf.add(TweenLite.to($('#littleWilf'), 3, {top:'0px' ,ease:Quad.easeInOut}));
+        $('.wilfHit').mouseover(function(){
+            var wil = new TimelineLite();
+            wil.to($('#littleWilf'), 0.7, {top:'185px' , ease: Quad.easeInOut});
+        }).mouseleave(function(){
+            var wil = new TimelineLite();
+            wil.to($('#littleWilf'), 3, {top:'250px' , ease: Quad.easeInOut});
+        });
     }
 
 
