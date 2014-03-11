@@ -4,7 +4,6 @@
   "dependencies": {
     "sass-bootstrap": "~3.0.0",
     "jquery": "~1.10.2",
-    "tweenMax": "~1.10.3",
     "history.js": "~1.8.0"
   },
   "devDependencies": {}

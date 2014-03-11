@@ -4,40 +4,78 @@
 @import "oasthouse";
 @import "nwtc";
 @import "botanist";
-
-html, body {
+.fake{
+    position: absolute;
+    top:-9999px;
+    height:0;
+    width:0;
+}
+html{
+    height: 100%;
+    width:100%;
+}
+body {
     min-height: 100%;
+    min-width: 100%;
     margin: 0;
+    padding:0;
     overflow: hidden;
-
+    background-image: url(../images/nwtc/homeback.jpg);
+    background-size: cover !important;
+    @include transition(all 3s ease);
+    .topB{
+        position: absolute;
+        top:-4px;
+        left:0;
+        min-width: 100%;
+        height:70px;
+        background: url(../images/topBorder.png) repeat-x;
+        z-index: 9999;
+    }
+    .rightB{
+        position: absolute;
+        top:0;
+        right:-10px;
+        min-width: 70px;
+        min-height:100%;
+        background: url(../images/rightBorder.png) repeat-y;
+        z-index: 9999;
+    }
+    .leftB{
+        position: absolute;
+        top:0;
+        left:-2px;
+        min-width: 70px;
+        min-height:100%;
+        background: url(../images/leftBorder.png) repeat-y;
+        z-index: 9999;
+    }
+    .bottomB{
+        position: absolute;
+        bottom:-8px;
+        left:0;
+        min-width: 100%;
+        height:70px;
+        background: url(../images/bottomBorder.png) repeat-x;
+        z-index: 9999;
+    }
 }
 
 
 #content {
-    img{
-    -webkit-filter: sepia(70%);
-    -moz-filter: sepia(70%);
-    -o-filter: sepia(70%);
-    -ms-filter: sepia(70%);
-    filter: sepia(70%);
-    }
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -540px;
-    margin-left: -960px;
-    overflow: hidden;
+    margin-top: -500px;
+    margin-left: -1000px;
     min-height: 100%;
-    width: 1920px;
-    height: 1032px;
-    background-image: url(../images/nwtc/home_back.png);
-/* add browser support */
+    min-width: 100%;
 
+    
+/* add browser support */
     -webkit-transform-style: preserve-3d;
     -webkit-perspective: 1000;
     -webkit-backface-visibility: hidden;
-    @include transition(all 3.5s ease-in-out);
-    
     -webkit-transform: translate3d(0, 0, 0);
 }
 
@@ -48,21 +86,17 @@ html, body {
     right: 0;
     width: 100%;
     height: 100%;
-
 }
 
 .hidden {
-    @include transform(translateX(1920px));
+    @include transform(translateX(2000px));
 }
 
 .offPage {
-    @include transform(translateX(-1920px));
+    @include transform(translateX(-2000px));
 }
-
 .balloon{
     position: absolute;
     @include transition(all 3.5s ease-in-out);
     z-index: 10;
 }
-
-/* .back{-webkit-filter: blur(2px); -moz-filter: blur(2px); -o-filter: blur(2px); -ms-filter: blur(2px); filter: blur(2px);} */

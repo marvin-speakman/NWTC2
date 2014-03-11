@@ -1,28 +1,27 @@
+
 var isLoading = false,
 parallax,
 currentPage = 'index',
 worlds = ['oasthouse', 'botanist', 'smugglerscove'],
 paraOpt = {
-                calibrateX: true,
-                calibrateY: true,
-                invertX: true,
-                invertY: true,
-                limitX: 10,
-                limitY: 0,
-                scalarX: 2,
-                scalarY: 2,
-                frictionX: 0.1,
-                frictionY: 0.1
-                }
+    calibrateX: true,
+    calibrateY: true,
+    invertX: true,
+    invertY: true,
+    limitX: 10,
+    limitY: 0,
+    scalarX: 2,
+    scalarY: 2,
+    frictionX: 0.1,
+    frictionY: 0.1
+};
 
 var balloonSway = new TimelineMax({ repeat: -1, yoyo: true });
-    balloonSway.append( TweenLite.to($('#balloon'), 3, {css:{rotation:10}, ease:Power2.easeInOut} ));
+balloonSway.append( TweenLite.to($('#balloon'), 3, {css:{rotation:10}, ease:Power2.easeInOut} ));
 
 
 
 var changePage = (function changePage() {
-    'use strict';
-
     function load(page) {
         currentPage = $('body').data('current');
         if(!isLoading && currentPage !== page) {
@@ -46,7 +45,7 @@ var changePage = (function changePage() {
                 console.log(page);
                 var tmp = window[page];
                 tmp.init();
-                //parallax.enable();
+                parallax.enable();
             }, 3500 );
         });
     }
@@ -58,7 +57,7 @@ var changePage = (function changePage() {
 
 function shuffle(array) {
     var currentIndex = array.length,
-        temporaryValue, 
+        temporaryValue,
         randomIndex;
 
     // While there remain elements to shuffle...
@@ -82,12 +81,57 @@ $('.nav_toggle').on('click', function () {
 
 var bodyBack,
 worldNo = worlds.length,
-tempWorld = 0
+tempWorld = 0;
 shuffle(worlds);
 console.log(worlds);
 
+function navigate(page){
+    parallax.disable();
+    switch(page) {
+        case 'index':
+            //History.pushState(page,'New World Trading Co','index.html');
+            bodyBack = 'images/nwtc/homeBack.jpg';
+            $('.balloon').css({
+                'top': '268px',
+                'left': '791px',
+                'height': '100%',
+                'width': '100%'
+            });
+            break;
+        case 'oasthouse':
+            //History.pushState(page,'The Oasthouse - New World Trading Co','oasthouse.html');
+            bodyBack = 'images/oasthouse/oast_back.png';
+            $('.balloon').css({
+                'top': '148px',
+                'left': '510px'
+            });
+            break;
+        case 'botanist':
+            //History.pushState(page,'The Botanist - New World Trading Co','botanist.html');
+            bodyBack = 'images/botanist/botBack.jpg';
+            $('.balloon').css({
+                'top': '288px',
+                'left': '1000px'
+            });
+            break;
+        case 'smugglerscove':
+            //History.pushState(page,'The Smugglers Cove - New World Trading Co' , 'smugglerscove.html');
+            bodyBack = 'images/smugglers/smug_back.png';
+            $('.balloon').css({
+                'top': '480px',
+                'left': '1310px'
+            });
+            break;
+    }
+    setTimeout( function() {
+        changePage.load(page);
+    },0);
+    setTimeout( function() {
+        $('html,body').css({'background': 'url(' + bodyBack + ')'});
+    }, 100 );
+}
+
 $('.wilfHit').on('click', function(){
-    
     if(curWorld == 'index'){
         curWorld = worlds[0];
         ++tempWorld
@@ -103,61 +147,7 @@ $('.wilfHit').on('click', function(){
          }
          navigate(curWorld);
     }
-})
-
-
-//$('nav a').on('click', function(event) {
-function navigate(page){
-    //event.preventDefault();
-    //parallax.disable();
-    //var page = $(this).data('page');
-
-    switch(page) {
-        case 'index':
-            // History.pushState(page,"New World Trading Co","index.html");
-                bodyBack = 'images/nwtc/homeBack.jpg';
-                $('.balloon').css({
-                      "top": "268px",
-                      "left": "791px",
-                      "height": "100%",
-                      "width": "100%"
-                    })
-        break;
-        case 'oasthouse':
-           // History.pushState(page,"The Oasthouse - New World Trading Co","oasthouse.html");
-            bodyBack = 'images/oasthouse/oast_back.png';
-            $('.balloon').css({
-                      "top": "148px",
-                      "left": "510px"
-                    })
-         break;
-        case 'botanist':
-            // History.pushState(page,"The Botanist - New World Trading Co","botanist.html");
-            bodyBack = 'images/botanist/botBack.jpg';
-            $('.balloon').css({
-                'top': '288px',
-                'left': '1000px'
-            })
-        break;
-        case 'smugglerscove':
-            // History.pushState(page,"The Smugglers Cove - New World Trading Co","smugglerscove.html");
-            bodyBack = 'images/smugglers/smug_back.png';
-             $('.balloon').css({
-                      "top": "480px",
-                      "left": "1310px"
-                    })
-        break;
-    }
-
-    setTimeout( function() {
-        changePage.load(page);
-    },0);
-
-    setTimeout( function() {
-        $('#content').css('background', 'url(' + bodyBack + ') ');
-        }, 0 );
-    $('nav').removeClass('active');
-};
+});
 
 // Parallax on the content div //
 var scene = document.getElementById('content');
@@ -176,7 +166,20 @@ $('.wilfred').on('click', function(){
     $('.overlay').css('opacity', '0');
     setTimeout( function() {
         index.init();
-       // parallax = new Parallax(scene,paraOpt);
+        parallax = new Parallax(scene,paraOpt);
         $('.overlay').css('display', 'none');
     }, 1500);
 })
+
+
+var preloads = [
+'images/smugglers/smug_back.png',
+'images/botanist/botBack.jpg',
+'images/oasthouse/oast_back.png',
+'images/nwtc/homeBack.jpg'
+];
+
+$(preloads).each(function(){
+    $('.fake')[0].src = this;
+});
+
