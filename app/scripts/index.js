@@ -17,7 +17,7 @@ var index = (function () {
     }
 
     function ele(){
-        var etl = new TimelineMax({repeat:10, repeatDelay:5});
+        var etl = new TimelineMax({repeat:0, repeatDelay:5});
         etl.add(TweenLite.to($('.eHead'), 3, {rotation:'20' ,ease:Quad.easeInOut}));
         etl.add(TweenLite.to($('.eHead'), 3, {rotation:'0' ,ease:Quad.easeInOut}));
     }
@@ -54,11 +54,15 @@ var index = (function () {
     function wilf(){
         $('.wilfHit').mouseover(function(){
             var wil = new TimelineLite();
-            wil.to($('#littleWilf'), 0.7, {top:'185px' , ease: Quad.easeInOut});
+            wil.to($('#littleWilf'), 0.7, {top:'390px' , ease: Quad.easeInOut});
         }).mouseleave(function(){
             var wil = new TimelineLite();
-            wil.to($('#littleWilf'), 3, {top:'250px' , ease: Quad.easeInOut});
+            wil.to($('#littleWilf'), 3, {top:'434px' , ease: Quad.easeInOut});
         });
+
+        $('.wilfHit').bind('click', function(){
+            moveworlds();
+        })
     }
 
 

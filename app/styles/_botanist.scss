@@ -8,6 +8,43 @@
         }
     }
 
+    .logo{
+        position: absolute;
+        top:230px;
+        left:870px;
+    }
+    .trowl{
+        position: absolute;
+        top:420px;
+        left:890px;
+    }
+
+    .goHit{
+        position: absolute;
+        top:420px;
+        left:890px;
+        height: 50px;
+        width: 150px;
+        cursor: pointer;
+    }
+    .plane{
+        position: absolute;
+        top:200px;
+        left: 3000px;
+        display:none;
+    }
+    .wilfBot{
+        position: absolute;
+        top:752px;
+        left:1050px;
+    }
+    .wilfHitBot{
+        position: absolute;
+        top:702px;
+        left:1050px;
+        height: 150px;
+        width:70px;
+    }
     .botIsland{
         position: absolute;
         left: 608px;

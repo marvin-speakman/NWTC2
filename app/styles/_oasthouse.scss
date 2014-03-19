@@ -6,7 +6,21 @@
 		height:143px;
 		position: absolute;
 		top: 180px;
-		right: 408px;
+		right: 814px;
+	}
+
+	.wilfOast{
+		position: absolute;
+		top: 213px;
+		left: 897px;
+	}
+
+	.wilfHitOast{
+		position: absolute;
+		top: 213px;
+		left: 897px;
+		width:100px;
+		height:200px;
 	}
 
 	.horse-feeder {
@@ -86,7 +100,7 @@
 			height:52px;
 			position: absolute;
 			top: 40px;
-			left: 0px;
+			left: -1000px;
 		}
 
 
@@ -103,12 +117,12 @@
 		right: 500px;
 		z-index:2;
 
-		.bee {
+		#bee {
 			background:url(../images/oasthouse/bee.png) no-repeat;
 			width:105px ;
 			height:118px ;
 			position: absolute;
-			top: -130px;
+			top: 30px;
 			right: 90px;
 		}
 
@@ -148,12 +162,17 @@
 	}
 
 	.rabbit {
-		background:url(../images/oasthouse/rabbit.png) no-repeat;
-		width:555px;
-		height:335px;
+		background:url(../images/oasthouse/rabbit-over.png) no-repeat 0 0;
+		width: 375px;
+		height: 187px;
 		position: absolute;
 		top: 78px;
 		left: 1381px;
+		&.active{
+			background: url(../images/oasthouse/rabbit-over.png) no-repeat 0 -259px;
+			width: 375px;
+			height: 189px;
+		}
 	}	
 
 

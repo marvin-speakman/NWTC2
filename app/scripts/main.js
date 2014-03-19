@@ -2,7 +2,7 @@
 var isLoading = false,
 parallax,
 currentPage = 'index',
-worlds = ['oasthouse', 'botanist', 'smugglerscove'],
+worlds = ['oasthouse','botanist','smugglerscove'],
 paraOpt = {
     calibrateX: true,
     calibrateY: true,
@@ -44,6 +44,7 @@ var changePage = (function changePage() {
                 isLoading = false;
                 console.log(page);
                 var tmp = window[page];
+                console.log(tmp);
                 tmp.init();
                 parallax.enable();
             }, 3500 );
@@ -90,7 +91,7 @@ function navigate(page){
     switch(page) {
         case 'index':
             //History.pushState(page,'New World Trading Co','index.html');
-            bodyBack = 'images/nwtc/homeBack.jpg';
+            bodyBack = 'images/nwtc/home_back.jpg';
             $('.balloon').css({
                 'top': '268px',
                 'left': '791px',
@@ -100,7 +101,7 @@ function navigate(page){
             break;
         case 'oasthouse':
             //History.pushState(page,'The Oasthouse - New World Trading Co','oasthouse.html');
-            bodyBack = 'images/oasthouse/oast_back.png';
+            bodyBack = 'images/oasthouse/oast_back.jpg';
             $('.balloon').css({
                 'top': '148px',
                 'left': '510px'
@@ -108,15 +109,15 @@ function navigate(page){
             break;
         case 'botanist':
             //History.pushState(page,'The Botanist - New World Trading Co','botanist.html');
-            bodyBack = 'images/botanist/botBack.jpg';
+            bodyBack = 'images/botanist/bot_back.jpg';
             $('.balloon').css({
                 'top': '288px',
-                'left': '1000px'
+                'left': '1200px'
             });
             break;
         case 'smugglerscove':
             //History.pushState(page,'The Smugglers Cove - New World Trading Co' , 'smugglerscove.html');
-            bodyBack = 'images/smugglers/smug_back.png';
+            bodyBack = 'images/smugglers/smug_back.jpg';
             $('.balloon').css({
                 'top': '480px',
                 'left': '1310px'
@@ -128,32 +129,34 @@ function navigate(page){
     },0);
     setTimeout( function() {
         $('html,body').css({'background': 'url(' + bodyBack + ')'});
-    }, 100 );
+    }, 0 );
 }
 
-$('.wilfHit').on('click', function(){
+//$('.wilfHit').on('click', function(){
+function moveworlds(){
     if(curWorld == 'index'){
         curWorld = worlds[0];
-        ++tempWorld
+        ++tempWorld;
         console.log(curWorld);
 
         navigate(curWorld);
     }else{
         curWorld = worlds[tempWorld]
-         ++tempWorld
+         ++tempWorld;
          console.log(curWorld);
          if(tempWorld >= worldNo){
-            tempWorld = 0
+            tempWorld = 0;
          }
          navigate(curWorld);
     }
-});
+}
+//});
 
 // Parallax on the content div //
 var scene = document.getElementById('content');
 
+var curWorld = 'index';
 
-curWorld = 'index';
 
 
 // opening functions //
@@ -173,13 +176,14 @@ $('.wilfred').on('click', function(){
 
 
 var preloads = [
-'images/smugglers/smug_back.png',
-'images/botanist/botBack.jpg',
-'images/oasthouse/oast_back.png',
-'images/nwtc/homeBack.jpg'
+'images/smugglers/smug_back.jpg',
+'images/botanist/bot_back.jpg',
+'images/oasthouse/oast_back.jpg',
+'images/nwtc/home_back.jpg'
 ];
-
-$(preloads).each(function(){
-    $('.fake')[0].src = this;
+var i = 0;
+$(preloads).each(function(i){
+    $('.fake')[i].src = this;
+    i++
 });
 

@@ -4,6 +4,7 @@
 @import "oasthouse";
 @import "nwtc";
 @import "botanist";
+@import "smugglers";
 .fake{
     position: absolute;
     top:-9999px;
@@ -20,7 +21,7 @@ body {
     margin: 0;
     padding:0;
     overflow: hidden;
-    background-image: url(../images/nwtc/homeback.jpg);
+    background-image: url(../images/nwtc/home_back.jpg);
     background-size: cover !important;
     @include transition(all 3s ease);
     .topB{
@@ -98,5 +99,5 @@ body {
 .balloon{
     position: absolute;
     @include transition(all 3.5s ease-in-out);
-    z-index: 10;
+    z-index: 9000;
 }

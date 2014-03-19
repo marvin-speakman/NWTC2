@@ -169,15 +169,18 @@
 		z-index: 100;
 		text-align: center;
 		@include transition(all 1s ease-in);
+		padding-top: 10%;
 	}
 	.wilfred{
 		position: relative;
-		margin-left: -400px;
-		top:300px;
+		margin: auto;
+		left:-160px;
+		height:300px;
+		width:500px;
 	}
 	.intro{
 		position: relative;
-		top:-207px;
+		top:-400px;
 		left: 320px;
 		font-family: georgia;
 		color: #fff;
@@ -185,9 +188,8 @@
 	}
 	#littleWilf{
 		position:absolute;
-		top:250px;
-		left: 353px;
-		z-index: -1;
+		top:434px;
+		left: 605px;
 	}
 	.wilfHit{
 		position:absolute;

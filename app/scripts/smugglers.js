@@ -1,0 +1,83 @@
+var smugglerscove = (function () {
+    'use strict';
+
+    function init () {
+        cats();
+        lime();
+        chest();
+        police();
+        plane();
+        go();
+        wilf();
+    }
+
+    function cats(){
+        $('.piano1').bind('mouseenter', function() {
+            $('.piano1').addClass('play');
+            var self = $(this);
+            this.iid = setInterval(function() {
+               $('.danceKitty').addClass('dance');
+               setTimeout(function(){
+                    $('.danceKitty').removeClass('dance');
+               }, 500)
+            }, 1000);
+        }).bind('mouseleave', function(){
+            $('.piano1').removeClass('play');
+            this.iid && clearInterval(this.iid);
+        });
+    }
+
+    function lime(){
+        $('.limeAnim').bind('mouseenter', function(){
+            $('.limeJuice').css('display','block');
+            setTimeout(function(){
+                $('.limeJuice2').css('display','block');
+            }, 200);
+        })
+    }
+
+    function go(){
+        $('.goHit').bind('click', function(){
+            window.location='#';
+        })
+    }
+
+    function chest(){
+        TweenMax.to(document.getElementById("moth"), 10, {bezier:{type:"soft", values:[{x:-40, y:-100}, {x:0, y:-600}, {x:200, y:-550}, {x:50, y:-500}, {x:100, y:-750}, {x:300, y:-350}, {x:600, y:-250}, {x:630, y:-300}, {x:850, y:-240}], autoRotate:["x","y","rotation",90,false]}, ease:Power1.easeInOut});
+    }
+
+    function plane(){
+        $('.plane').css('display','block');
+        var plane = new TimelineMax({ repeat: -1});
+        plane.append( TweenLite.to($('.plane'), 15, {css:{left:3000}, ease:Power0.linear} ));
+    }
+
+    function police(){
+        $('.policemanAnim').bind('mouseenter', function() {
+            $('.policeman').addClass('active');
+            $('.smuggler').addClass('active');
+
+        }).bind('mouseleave', function(){
+            $('.policeman').removeClass('active');
+            $('.smuggler').removeClass('active');
+        });
+    }
+
+    function wilf(){
+        $('.wilfHit').mouseover(function(){
+            var wil = new TimelineLite();
+            wil.to($('.wilf'), 0.7, {top:'60px' , ease: Quad.easeInOut});
+        }).mouseleave(function(){
+            var wil = new TimelineLite();
+            wil.to($('.wilf'), 3, {top:'111px' , ease: Quad.easeInOut});
+        });
+        $('.wilfHit').bind('click', function(){
+            moveworlds();
+        })
+    }
+
+   
+    return {
+        init: init
+    }
+}());

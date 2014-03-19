@@ -11,7 +11,9 @@ var botanist = (function () {
         flowers();
         cloudRain();
         wheel();
-        //rain();
+        wilf();
+        go();
+        plane();
     }
 
     function wheel() {
@@ -46,7 +48,7 @@ var botanist = (function () {
         $('.jarHit').mouseover(function(){
             var btl = new TimelineLite();
             btl.to($('.jar'), 0.7, {rotation:-150, transformOrigin: "22px bottom" , ease: Quad.easeOut});
-            btl.to($('.jar'), 2.2, {top: '1000px' , ease:Quad.easeOut}, '-=0.2');
+            btl.to($('.jar'), 2.2, {top: '1000px' , ease:Quad.easeIn}, '-=0.2');
             btl.to($('.jar'), 2.2, {rotation: -360, transformOrigin: "middle middle" , ease: Quad.easeOut}, '-=2.1');
         });
     }
@@ -85,6 +87,31 @@ var botanist = (function () {
             cloud.to($('.rain'), 0.2, {rotation:2, ease:Linear.easeNone, repeat: 6, yoyo: true}, 1.7);
             cloud.to($('.rain'), 1.2, {top: 0, ease:Linear.easeNone}, 1.7);
         });
+    }
+
+    function wilf(){
+        $('.wilfHitBot').mouseover(function(){
+            var wil = new TimelineLite();
+            wil.to($('.wilfBot'), 0.7, {top:'712px' , ease: Quad.easeInOut});
+        }).mouseleave(function(){
+            var wil = new TimelineLite();
+            wil.to($('.wilfBot'), 2.5, {top:'752px' , ease: Quad.easeInOut});
+        });
+        $('.wilfHitBot').bind('click', function(){
+            moveworlds();
+        })
+    }
+
+    function go(){
+        $('.goHit').bind('click', function(){
+            window.location='#';
+        })
+    }
+
+    function plane(){
+        $('.plane').css('display','block');
+        var plane = new TimelineMax({ repeat: -1});
+        plane.append( TweenLite.to($('.plane'), 20, {css:{left:-1500}, ease:Power0.linear} ));
     }
 
     return {
