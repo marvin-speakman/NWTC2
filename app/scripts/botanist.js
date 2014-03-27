@@ -14,6 +14,10 @@ var botanist = (function () {
         wilf();
         go();
         plane();
+        astroroll();
+        snail();
+        mole();
+        spider();
     }
 
     function wheel() {
@@ -78,14 +82,68 @@ var botanist = (function () {
             TweenMax.to($('.d10'), 1.4, { css: { opacity: i/10, top: '+=50', left: '+=' + randomFromInterval(-50, 50)}, ease: Linear.easeNone, delay: 3.4-(i/10) });
             TweenMax.to($('.d11'), 1.4, { css: { opacity: i/10, top: '+=50', left: '+=' + randomFromInterval(-50, 50)}, ease: Linear.easeNone, delay: 3.4-(i/10) });
         }
-    }
+        setTimeout(function(){
+                console.log('flowers')
+                $('.d1').css({'top':'239px', 'left':'415px'});
+                $('.d2').css({'top':'239px', 'left':'415px'});
+                $('.d3').css({'top':'239px', 'left':'415px'});
+                $('.d4').css({'top':'239px', 'left':'415px'});
+                $('.d5').css({'top':'239px', 'left':'415px'});
+                $('.d6').css({'top':'239px', 'left':'415px'});
+                $('.d7').css({'top':'239px', 'left':'415px'});
+                $('.d8').css({'top':'239px', 'left':'415px'});
+                $('.d9').css({'top':'239px', 'left':'415px'});
+                $('.d10').css({'top':'239px', 'left':'415px'});
+                $('.d11').css({'top':'239px', 'left':'415px'});
 
+        }, 5000)
+    }
+    function astroroll(){
+       $('.astroHit').mouseover(function(){
+            //console.log('over');
+            flowers();
+        }) 
+    }
+    
     function cloudRain(){
         $('.cloud_hit').mouseover(function(){
             var cloud = new TimelineMax();
             cloud.to($('.cloud_rain'), 1.7, {left: 634, ease: Linear.easeNone}, 0);
             cloud.to($('.rain'), 0.2, {rotation:2, ease:Linear.easeNone, repeat: 6, yoyo: true}, 1.7);
-            cloud.to($('.rain'), 1.2, {top: 0, ease:Linear.easeNone}, 1.7);
+            cloud.to($('.rain'), 1.2, {top: 200, ease:Linear.easeNone}, 1.7);
+            cloud.to($('.rain'), 1.2, {opacity: 0, ease:Linear.easeNone}, 1.7);
+            setTimeout(function(){
+                $('.rain').css({'opacity':'1'});
+                $('.rain').css({'top':'-200px'}); 
+            }, 500);
+            
+        });
+
+    }
+
+    function snail(){
+        $('.snail').mouseover(function(){
+            $('.snail').addClass('active');
+        }).mouseleave(function(){
+            $('.snail').removeClass('active');
+        })
+    }
+
+    function mole(){
+        $('.moleHit').mouseover(function(){
+            $('.mole').addClass('active');
+        }).mouseleave(function(){
+            $('.mole').removeClass('active');
+        })
+    }
+
+    function spider(){
+        var spider = new TimelineLite({onComplete:function(){$('.spiderHit').css('display','block');}});
+         $('.spiderHit').mouseover(function(){
+            $(this).css('display', 'none');
+            spider.to($('.spider'), 0.7, {top:'778px' , easeOut: BounceOut});
+        }).mouseleave(function(){
+            spider.to($('.spider'), 2.5, {top:'658px' , ease: Quad.easeInOut});
         });
     }
 
@@ -109,9 +167,9 @@ var botanist = (function () {
     }
 
     function plane(){
-        $('.plane').css('display','block');
+        $('.planeBot').css('display','block');
         var plane = new TimelineMax({ repeat: -1});
-        plane.append( TweenLite.to($('.plane'), 20, {css:{left:-1500}, ease:Power0.linear} ));
+        plane.append( TweenLite.to($('.planeBot'), 20, {css:{left:-1500}, ease:Power0.linear} ));
     }
 
     return {

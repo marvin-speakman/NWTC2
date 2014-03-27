@@ -27,10 +27,10 @@
         width: 150px;
         cursor: pointer;
     }
-    .plane{
+    .planeBot{
         position: absolute;
         top:200px;
-        left: 3000px;
+        left: 2000px;
         display:none;
     }
     .wilfBot{
@@ -56,28 +56,28 @@
     .botWaiter{
         position: absolute;
         top: 180px;
-        right: 85px;
+        left: 1200px;
         width: 390px;
         height: 383px;
 
         .jar, .waiter {
             position: absolute;
         }
-
         .jar {
             top: 0;
             right: 88px;
         }
 
-        .waiter {
-            bottom: 0;
+        .Bwaiter {
+            position: absolute;
+            top: 145px;
         }
     }
 
     .jarHit {
         position: absolute;
         top: 180px;
-        right: 193px;
+        left: 1383px;
         width: 112px;
         height: 188px;
     }
@@ -120,6 +120,13 @@
         left: 1023px;
         width: 505px;
         height: 299px;
+    }
+    .astroHit{
+        position: absolute;
+        top: 592px;
+        left: 1173px;
+        width: 150px;
+        height: 150px;
     }
 
     /*Dhalis*/
@@ -242,15 +249,60 @@
 
     .botCloud {
         position: absolute;
-        right: 50px;
-        bottom: 40px;
+        left: 1200px;
+
     }
 
     .snail{
         position: absolute;
+        background: url('../images/botanist/snSprite.png') no-repeat -31px 0;
         top: 760px;
         left: 140px;
+        width: 298px;
+        height: 148px;
+        &.active{
+            background: url('../images/botanist/snSprite.png') no-repeat -31px -184px
+        }
     }
+
+    .mole{
+        position: absolute;
+        top: 588px;
+        left:969px;
+        background: url('../images/botanist/moleSprite.png') no-repeat -87px -110px;
+        width: 220px;
+        height: 87px;
+
+        &.active{
+            background: url('../images/botanist/moleSprite.png') no-repeat 0 -1px;
+       
+            top: 558px;
+            left:900px;
+        }
+    }  
+
+    .spider{
+        position: absolute;
+        top: 658px;
+        left: 919px;
+    }
+    .spiderHit{
+        position: absolute;
+        top: 658px;
+        left: 919px;
+        height: 100px;
+        width:70px;
+    }
+
+    .moleHit{
+        position: absolute;
+        top: 588px;
+        left:969px;
+        width: 220px;
+        height: 87px;
+    }
+
+    
 
     .cork{
         position: absolute;
@@ -263,12 +315,6 @@
         left: 350px;
 
     }
-    .trumpet{
-        position: absolute;
-        top: 830px;
-        right: -60px;
-    }
-
     .cloud_rain {
         position: absolute;
         left: 413px;
@@ -288,7 +334,7 @@
 
     .cloud_hit {
         position: absolute;
-        left: 413px;
+        left: 633px;
         top: 190px;
         width: 267px;
         height: 105px;

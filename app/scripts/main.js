@@ -2,7 +2,7 @@
 var isLoading = false,
 parallax,
 currentPage = 'index',
-worlds = ['oasthouse','botanist','smugglerscove'],
+worlds = ['smugglerscove','oasthouse','botanist'],
 paraOpt = {
     calibrateX: true,
     calibrateY: true,
@@ -23,7 +23,6 @@ balloonSway.append( TweenLite.to($('#balloon'), 3, {css:{rotation:10}, ease:Powe
 
 var changePage = (function changePage() {
     function load(page) {
-        currentPage = $('body').data('current');
         if(!isLoading && currentPage !== page) {
             isLoading = true;
             $('#content').append('<div class="page hidden"></div>');
@@ -34,17 +33,20 @@ var changePage = (function changePage() {
 
     function setUpImageListener(page, currentPage) {
         $('#content').off().imagesLoaded().always( function() {
-            $('.page').first().addClass('offPage');
-            $('.page').last().removeClass('hidden');
-            $('body').addClass(page);
+            $( '.page' ).first().animate({
+                left: '-=2000',
+              }, 4000, "swing");
 
-            setTimeout( function() {
-                $('body').data('current', page).removeClass(currentPage);
+            $( '.page' ).last().animate({
+                left: '0',
+              }, 4000, "swing");
+
+            $('body').addClass(page);
+            setTimeout( function() {   
                 $('.page').first().remove();
-                isLoading = false;
-                console.log(page);
+                $('body').removeClass('index');
+                isLoading = false;        
                 var tmp = window[page];
-                console.log(tmp);
                 tmp.init();
                 parallax.enable();
             }, 3500 );
@@ -81,17 +83,19 @@ $('.nav_toggle').on('click', function () {
 });
 
 var bodyBack,
+contact,
 worldNo = worlds.length,
 tempWorld = 0;
 shuffle(worlds);
-console.log(worlds);
-
+console.log('Welcome to the New World Trading Co.');
+console.log('Find the Balloon Master to traverse from world to world');
 function navigate(page){
     parallax.disable();
     switch(page) {
         case 'index':
             //History.pushState(page,'New World Trading Co','index.html');
             bodyBack = 'images/nwtc/home_back.jpg';
+            contact = 'url(images/nwtc/contact.png)no-repeat';
             $('.balloon').css({
                 'top': '268px',
                 'left': '791px',
@@ -102,6 +106,7 @@ function navigate(page){
         case 'oasthouse':
             //History.pushState(page,'The Oasthouse - New World Trading Co','oasthouse.html');
             bodyBack = 'images/oasthouse/oast_back.jpg';
+            contact = 'url(images/oasthouse/contact.png)no-repeat';
             $('.balloon').css({
                 'top': '148px',
                 'left': '510px'
@@ -110,6 +115,7 @@ function navigate(page){
         case 'botanist':
             //History.pushState(page,'The Botanist - New World Trading Co','botanist.html');
             bodyBack = 'images/botanist/bot_back.jpg';
+            contact = 'none';
             $('.balloon').css({
                 'top': '288px',
                 'left': '1200px'
@@ -118,6 +124,7 @@ function navigate(page){
         case 'smugglerscove':
             //History.pushState(page,'The Smugglers Cove - New World Trading Co' , 'smugglerscove.html');
             bodyBack = 'images/smugglers/smug_back.jpg';
+            contact = 'url(images/smugglers/contact.png)no-repeat';
             $('.balloon').css({
                 'top': '480px',
                 'left': '1310px'
@@ -128,27 +135,29 @@ function navigate(page){
         changePage.load(page);
     },0);
     setTimeout( function() {
-        $('html,body').css({'background': 'url(' + bodyBack + ')'});
+        $('html,body').css({'background': 'url(' + bodyBack + ')no-repeat center center fixed'});
+        $('.trumpet').css({'background': contact})
     }, 0 );
 }
 
 //$('.wilfHit').on('click', function(){
 function moveworlds(){
+    $('.wHit').css('display', 'none');
     if(curWorld == 'index'){
         curWorld = worlds[0];
         ++tempWorld;
-        console.log(curWorld);
-
         navigate(curWorld);
     }else{
         curWorld = worlds[tempWorld]
          ++tempWorld;
-         console.log(curWorld);
          if(tempWorld >= worldNo){
             tempWorld = 0;
          }
          navigate(curWorld);
     }
+    setTimeout( function(){
+        $('.wHit').css('display', 'block');
+    }, 2000);
 }
 //});
 

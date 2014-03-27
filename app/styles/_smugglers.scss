@@ -54,6 +54,24 @@
 			z-index: -10;
 		}
 	}
+	.smugBar{
+		position: absolute;
+		top:26px;
+		left:560px;
+		background: url('../images/smugglers/smugglerBar.png') no-repeat 0 200px;
+		width: 138px;
+		height: 151px;
+		&.active{
+			background: url('../images/smugglers/smugglerBar.png') no-repeat 0 0;
+		}
+	}
+	.smugglerAnim{
+		position: absolute;
+		top:26px;
+		left:560px;
+		width: 138px;
+		height: 151px;
+	}
 	.waiter{
 		position: absolute;
 		top:300px;
@@ -112,6 +130,14 @@
 				height: 282px;
 			}
 		}
+		.noteMask{
+			position: absolute;
+			top:-90px;
+			left:170px;
+			width:0px;
+			overflow: hidden;
+			@include transition(all 1s ease);
+		}
 		.danceKitty{
 			position: absolute;
 			top:-4px;
@@ -133,21 +159,32 @@
 	}
 	.chest{
 		position: absolute;
+		top:690px;
+		left:150px;
+		background: url('../images/smugglers/caseSprite.png') no-repeat -284px -99px;
+		width: 229px;
+		height: 211px;
+		z-index: 10;
+		&.active{
+			background: url('../images/smugglers/caseSprite.png') no-repeat -3px -20px;
+			width: 229px;
+			height: 211px;
+			top:610px;
+			left:150px
+		}
+	}
+	.chestHit{
+		position: absolute;
 		top:590px;
 		left:150px;
-		
-		.box{
-			position: absolute;
-			z-index: 10;
-		}
+		width: 228px;
+		height: 132px;
 	}
 	#moth{
 		position: absolute;
-		top:270px;
-		left:110px;
-		z-index: 9;
+		top:720px;
+		left:239px;	
 	}
-
 	.policemanAnim{
 		position: absolute;
 		top:600px;
@@ -206,7 +243,6 @@
 		cursor: pointer;
 		
 	}
-
 }
 
 

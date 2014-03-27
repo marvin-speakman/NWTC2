@@ -1,35 +1,62 @@
 .oasthouse {
 	background-size:cover;
-	.clouds {
+	.cloudsOast {
 		background:url(../images/oasthouse/clouds.png) no-repeat;
 		width:411px;
 		height:143px;
 		position: absolute;
 		top: 180px;
-		right: 814px;
+		left: 921px;
 	}
-
+	.forks{
+		position: absolute;
+		top:70px;
+		left:730px;
+	}
 	.wilfOast{
 		position: absolute;
-		top: 213px;
-		left: 897px;
+		top: 212px;
+		left: 1127px;
 	}
 
 	.wilfHitOast{
 		position: absolute;
-		top: 213px;
-		left: 897px;
+		top: 123px;
+		left: 1117px;
 		width:100px;
 		height:200px;
 	}
 
 	.horse-feeder {
-		background:url(../images/oasthouse/horse.png) no-repeat;
-		width:425px;
-		height:612px;
+		background:url(../images/oasthouse/horseSprite.png) no-repeat -6px -42px;
+		width: 425px;
+		height: 612px;
 		position: absolute;
 		top: 70px;
 		left: 50px;
+		&.active{
+			background: url(../images/oasthouse/horseSprite.png) no-repeat -546px -42px;
+		}
+	}
+	.horse{
+		width: 425px;
+		height: 612px;
+		position: absolute;
+		top: 70px;
+		left: 50px;
+	}
+	.olive{
+		position: absolute;
+		top:-480px;
+		left:-18px;
+	}
+	.oliveMask{
+		position: absolute;
+		top:229px;
+		left:179px;
+		height:218px;
+		width: 50px;
+		overflow: hidden;
 	}
 
 	.center-island {
@@ -101,6 +128,7 @@
 			position: absolute;
 			top: 40px;
 			left: -1000px;
+			display: none;
 		}
 
 
@@ -113,8 +141,8 @@
 		display:block;
 		background:url(../images/oasthouse/bee-bg.png) no-repeat;
 		position:absolute;
-		top: 544px;
-		right: 500px;
+		top: 604px;
+		left: 1020px;
 		z-index:2;
 
 		#bee {
@@ -137,12 +165,6 @@
 		left: 140px;
 	}
 
-	.trumpet{
-		position: absolute;
-		top: 830px;
-		right: -60px;
-	}	
-
 	.train-nuts {
 		background:url(../images/oasthouse/TRAIN-Nuts.png) no-repeat;
 		width:325px;
@@ -152,13 +174,57 @@
 		left: 700px;
 	}
 
+	.trainRight{
+		background:url(../images/oasthouse/train_right.png) no-repeat;
+		width:278px;
+		height:77px;
+		position: absolute;
+		top: 0px;
+		left: -300px;
+	}
+
+	.trainMask1{
+		position: absolute;
+		height:80px;
+		width:450px;
+		top: 892px;
+		left: 899px;
+		overflow: hidden;
+	}
+
 	.train-toms {
 		background:url(../images/oasthouse/TRAIN-Toms.png) no-repeat;
-		width:354px;
-		height:120px;
+		width:320px;
+		height:175px;
 		position: absolute;
-		top: 458px;
-		left: 1441px;
+		top: 388px;
+		left: 1191px;
+	}
+
+	.trainLeft{
+		background:url(../images/oasthouse/train_left.png) no-repeat;
+		width:278px;
+		height:77px;
+		position: absolute;
+		top: 0px;
+		left: 150px;
+	}
+
+	.trainMask2{
+		position: absolute;
+		height:80px;
+		width:430px;
+		top: 428px;
+		left: 1414px;
+		overflow: hidden;
+	}
+
+	.trainHit{
+		position: absolute;		
+		width:320px;
+		height:175px;
+		top: 388px;
+		left: 1191px;
 	}
 
 	.rabbit {
@@ -174,8 +240,6 @@
 			height: 189px;
 		}
 	}	
-
-
 }
 
 

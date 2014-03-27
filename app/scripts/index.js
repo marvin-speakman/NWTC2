@@ -3,21 +3,33 @@ var index = (function () {
 
     function init () {
         diver();
+        diverRoll()
         bottleFall();
         ele();
         windGirl();
         waiterFall();
         wilf();
     }
-
+    
     function diver(){
-        var dtl = new TimelineLite();
-        dtl.to($('.diver'), 0.2, {top:'0px' , ease: Power2.easeOut});
-        dtl.to($('.rainMask'), 0.7, {height: '300px' , ease:Quad.easeIn})
+        var dtl = new TimelineLite({onComplete:function(){$('.diverHit').css('display','block');}});
+        dtl.to($('.diver'), 2, {top:'0px' , ease:Quad.easeOut});
+        dtl.to($('.rainMask'), 0.7, {height: '300px' , ease:Quad.easeIn});
+        dtl.to($('.rainMask'), 0.7, {opacity: '0' , ease:Quad.easeIn});
+        dtl.to($('.diver'), 2, {top:'130px' , ease:Quad.easeOut});
+    }
+
+    function diverRoll(){
+        $('.diverHit').mouseover(function(){
+            $(this).css('display','none');
+            $('.rainMask').css('height', '0px');
+            $('.rainMask').css('opacity', '1');
+            diver();
+        })
     }
 
     function ele(){
-        var etl = new TimelineMax({repeat:0, repeatDelay:5});
+        var etl = new TimelineMax({repeat:-1, repeatDelay:4});
         etl.add(TweenLite.to($('.eHead'), 3, {rotation:'20' ,ease:Quad.easeInOut}));
         etl.add(TweenLite.to($('.eHead'), 3, {rotation:'0' ,ease:Quad.easeInOut}));
     }
@@ -31,15 +43,31 @@ var index = (function () {
     }
 
     function windGirl(){
+        var wtl = new TimelineMax();
         $('.windHit').mouseover(function(){
-            var wtl = new TimelineMax();
+
             wtl.to($('.wind'), 1, { css: { opacity: 1, left: -10, top: -27 }, ease: Quad.easeInOut});
             wtl.to($('.wt1'),4, {css: {rotation: '1800'}, ease: Quad.easeInOut}, "-=0.7")
             wtl.to($('.wt2'),4, {css: {rotation: '1800'}, ease: Quad.easeInOut}, "-=3.5")
             wtl.to($('.wt3'),4, {css: {rotation: '1800'}, ease: Quad.easeInOut}, "-=3.5")
             wtl.to($('.wt4'),4, {css: {rotation: '1800'}, ease: Quad.easeInOut}, "-=3.5")
             wtl.to($('.wt5'),4, {css: {rotation: '1800'}, ease: Quad.easeInOut}, "-=3.5")
+        }).mouseleave(function(){
+            $('.windHit').css('display','none');
+            wtl.to($('.wind'), 1, { css: { opacity: 0, left: -37, top: -17 }, ease: Quad.easeInOut});
+            setTimeout(function(){
+                showWindHit();
+            }, 4000)
         });
+        function showWindHit(){
+            $('.windHit').css('display','block');
+            wtl.to($('.wt1'),0, {css: {rotation: '0'}})
+            wtl.to($('.wt2'),0, {css: {rotation: '0'}})
+            wtl.to($('.wt3'),0, {css: {rotation: '0'}})
+            wtl.to($('.wt4'),0, {css: {rotation: '0'}})
+            wtl.to($('.wt5'),0, {css: {rotation: '0'}})
+            console.log('finished')
+        }
     }
 
     function waiterFall(){

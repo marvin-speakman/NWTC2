@@ -21,9 +21,22 @@ body {
     margin: 0;
     padding:0;
     overflow: hidden;
-    background-image: url(../images/nwtc/home_back.jpg);
+    background: url(../images/nwtc/home_back.jpg)no-repeat center center fixed;
     background-size: cover !important;
-    @include transition(all 3s ease);
+    -o-background-size: cover !important;    
+    -moz-background-size: cover !important;    
+    -webkit-background-size: cover !important;
+    transition:all 3s ease;
+    -o-transition:all 3s ease;
+    -moz-transition:all 3s ease;
+    -webkit-transition:all 3s ease;
+    transition: background 2000ms ease-in 500ms;
+    -o-transition: background 2000ms ease-in 500ms;   
+    -moz-transition: background 2000ms ease-in 500ms;   
+    -webkit-transition: background 2000ms ease-in 500ms; /* property duration timing-function delay */
+    overflow: hidden;
+ 
+
     .topB{
         position: absolute;
         top:-4px;
@@ -31,7 +44,7 @@ body {
         min-width: 100%;
         height:70px;
         background: url(../images/topBorder.png) repeat-x;
-        z-index: 9999;
+        z-index: 99;
     }
     .rightB{
         position: absolute;
@@ -40,7 +53,7 @@ body {
         min-width: 70px;
         min-height:100%;
         background: url(../images/rightBorder.png) repeat-y;
-        z-index: 9999;
+        z-index: 99;
     }
     .leftB{
         position: absolute;
@@ -49,7 +62,7 @@ body {
         min-width: 70px;
         min-height:100%;
         background: url(../images/leftBorder.png) repeat-y;
-        z-index: 9999;
+        z-index: 99;
     }
     .bottomB{
         position: absolute;
@@ -58,7 +71,7 @@ body {
         min-width: 100%;
         height:70px;
         background: url(../images/bottomBorder.png) repeat-x;
-        z-index: 9999;
+        z-index: 99;
     }
 }
 
@@ -67,22 +80,43 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -500px;
-    margin-left: -1000px;
+    margin-top: -516px;
+    margin-left: -920px;
     min-height: 100%;
     min-width: 100%;
 
     
 /* add browser support */
+    transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;   
     -webkit-transform-style: preserve-3d;
+    perspective: 1000;
+    -o-perspective: 1000;
+    -moz-perspective: 1000;
     -webkit-perspective: 1000;
+    backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
+}
+
+.trumpet{
+    background:url('../images/nwtc/contact.png') no-repeat;
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    height: 126px;
+    width: 355px;
 }
 
 .page {
     position: absolute;
-    @include transition(all 3.5s ease-in-out);
+    //@include transition(all 3.5s ease-in-out);
     opacity: 1;
     right: 0;
     width: 100%;
@@ -90,11 +124,11 @@ body {
 }
 
 .hidden {
-    @include transform(translateX(2000px));
+    left: 2000px;
 }
 
 .offPage {
-    @include transform(translateX(-2000px));
+    left: -2000px;
 }
 .balloon{
     position: absolute;
